@@ -20,24 +20,47 @@ export function App() {
         inset: 0,
         padding: "3%",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 80,
       }}
     >
       <div>
-        <ListNest list={new Array<string>(10).fill("")} height={400} />
+        <LayerNesting list={new Array<string>(10).fill("")} height={400} />
       </div>
       <div>
-        <ListTable layers={LAYERS} />
+        <LayerTable layers={LAYERS} />
       </div>
     </div>
   )
 }
 
-const ListTable: FC<{
+const LayerTable: FC<{
   layers: typeof LAYERS
-}> = ({ layers }) => <table></table>
+}> = ({ layers }) => (
+  <table>
+    <thead>
+      <tr>
+        <th style={{ textAlign: "center" }}>macro</th>
+        <th style={{ textAlign: "center" }}>micro</th>
+      </tr>
+    </thead>
+    <tbody>
+      {layers.map((layer, i) => (
+        <tr key={i}>
+          <td style={{ textAlign: "center", padding: "0 8px" }}>
+            {layer.macro}
+          </td>
+          <td style={{ textAlign: "center", padding: "0 8px" }}>
+            {layer.micro}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
 
-const ListNest: FC<{
+const LayerNesting: FC<{
   list: unknown[]
   index?: number
   height: number
@@ -64,7 +87,7 @@ const ListNest: FC<{
       }}
     >
       {index + 1 < list.length && (
-        <ListNest list={list} index={index + 1} height={height} />
+        <LayerNesting list={list} index={index + 1} height={height} />
       )}
       <div
         style={
