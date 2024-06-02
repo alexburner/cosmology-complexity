@@ -26,7 +26,7 @@ export function App() {
       }}
     >
       <div>
-        <LayerNesting list={new Array<string>(10).fill("")} height={400} />
+        <LayerNesting layers={LAYERS} height={400} />
       </div>
       <div>
         <LayerTable layers={LAYERS} />
@@ -61,47 +61,39 @@ const LayerTable: FC<{
 )
 
 const LayerNesting: FC<{
-  list: unknown[]
+  layers: typeof LAYERS
   index?: number
   height: number
-}> = ({ list, index = 0, height }) => {
-  // const self = list.at(-1)
-  // const radius = 60 + 20 * (list.length - index - 1)
-  const hue = (index / (list.length - 1)) * 0.7
-  const impact = (list.length - index) / list.length
+}> = ({ layers, index = 0, height }) => {
+  const self = layers[index]
+  if (!self) return null // Unreachable
+  const hue = (index / layers.length) * 0.7 - 0.05
+  const impact = (layers.length - index) / layers.length
   return (
     <div
       style={{
-        padding: "10px 10px",
+        padding: index === 0 ? "10px 10px 12px" : "10px 10px",
         margin: "0 0 10px",
-        // borderRadius: "3px",
-        borderRadius: `${impact * 2 + 3}px`,
-        // borderBottomLeftRadius: radius,
-        // borderBottomRightRadius: radius,
-        background: `hsl(${hue}turn 60% 60%)`,
+        borderRadius: `${impact * 12 + 12}px`,
+        background: `hsl(${hue}turn 60% 70%)`,
         border: `1px dotted #333`,
-        // border: `2px solid hsl(${hue}turn 60% 50%)`,
-        // borderTop: "none",
-        display: "inline-block",
         width: "auto",
       }}
     >
-      {index + 1 < list.length && (
-        <LayerNesting list={list} index={index + 1} height={height} />
+      {index + 1 < layers.length && (
+        <LayerNesting layers={layers} index={index + 1} height={height} />
       )}
       <div
-        style={
-          index + 1 < list.length
-            ? {
-                height: `20px`,
-                width: `200px`,
-              }
-            : {
-                width: `200px`,
-              }
-        }
+        style={{
+          padding: "0 0 1px",
+          lineHeight: "1.25em",
+          display: "flex",
+          justifyContent: "center",
+          gap: 40,
+        }}
       >
-        &nbsp;
+        <div style={{ width: "100px", textAlign: "right" }}>{self.macro}</div>
+        <div style={{ width: "100px", textAlign: "left" }}>{self.micro}</div>
       </div>
     </div>
   )
