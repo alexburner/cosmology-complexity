@@ -1,44 +1,43 @@
 import { FC } from "react"
 
-const hcList = new Array<string>(10).fill("")
-const dcList = new Array<string>(5).fill("")
+const LAYERS = [
+  { macro: "cosmic web", micro: "quantum foam" },
+  { macro: "galaxies", micro: "particles" },
+  { macro: "stars", micro: "atoms" },
+  { macro: "planets", micro: "molecules" },
+  { macro: "geomes", micro: "biomolecules" },
+  { macro: "biomes", micro: "cells" },
+  { macro: "organisms", micro: "organs" },
+  { macro: "collectives", micro: "awareness" },
+  { macro: "cultures", micro: "abstraction" },
+] as const
 
 export function App() {
   return (
     <div
       style={{
-        position: "relative",
-        width: "1000px",
-        height: "1400px",
-        margin: " 3% auto",
+        position: "fixed",
+        inset: 0,
+        padding: "3%",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-        }}
-      >
-        <HumanCosmology list={hcList} height={400} />
+      <div>
+        <ListNest list={new Array<string>(10).fill("")} height={400} />
       </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          display: "none",
-        }}
-      >
-        <DimensionComplexity list={dcList} height={1000} />
+      <div>
+        <ListTable layers={LAYERS} />
       </div>
     </div>
   )
 }
 
-const HumanCosmology: FC<{
+const ListTable: FC<{
+  layers: typeof LAYERS
+}> = ({ layers }) => <table></table>
+
+const ListNest: FC<{
   list: unknown[]
   index?: number
   height: number
@@ -65,7 +64,7 @@ const HumanCosmology: FC<{
       }}
     >
       {index + 1 < list.length && (
-        <HumanCosmology list={list} index={index + 1} height={height} />
+        <ListNest list={list} index={index + 1} height={height} />
       )}
       <div
         style={
@@ -81,35 +80,6 @@ const HumanCosmology: FC<{
       >
         &nbsp;
       </div>
-    </div>
-  )
-}
-
-const DimensionComplexity: FC<{
-  list: unknown[]
-  height: number
-}> = ({ list, height }) => {
-  // const self = list.at(-1)
-  const remaining = list.slice(0, -1)
-  const radius = 30 + 10 * list.length
-  return (
-    <div
-      style={{
-        padding: "0 20px",
-        border: "1px solid blue",
-        borderTop: "none",
-        borderBottomLeftRadius: radius,
-        borderBottomRightRadius: radius,
-      }}
-    >
-      {remaining.length > 0 && (
-        <DimensionComplexity list={remaining} height={height} />
-      )}
-      <div
-        style={{
-          height: `${height}px`,
-        }}
-      ></div>
     </div>
   )
 }
