@@ -26,12 +26,12 @@ export function App() {
       }}
     >
       <div>
-        <LayerTable layers={LAYERS} />
-      </div>
-      <div>
         <LayerNesting layers={LAYERS} height={400} />
       </div>
       <div>big bloom</div>
+      <div>
+        <LayerTable layers={LAYERS} />
+      </div>
     </div>
   )
 }
@@ -47,9 +47,9 @@ const LayerNesting: FC<{
   return (
     <div
       style={{
-        padding: index === 0 ? "10px 10px 12px" : "10px 10px",
+        padding: "10px 10px",
         margin: "0 0 10px",
-        borderRadius: `${impact * 12 + 12}px`,
+        borderRadius: `${impact * 64 + 12}px`,
         background: `hsl(${hue(index, layers.length)}turn 60% 70%)`,
         border: `1px dotted #333`,
         width: "auto",
@@ -60,17 +60,29 @@ const LayerNesting: FC<{
       )}
       <div
         style={{
-          padding: "0 0 1px",
-          lineHeight: "1.25em",
+          paddingBottom: index === 0 ? "1px" : "0px",
+          lineHeight: "1.5em",
           display: "flex",
           justifyContent: "center",
           gap: 30,
         }}
       >
-        <div style={{ minWidth: "100px", textAlign: "right" }}>
+        <div
+          style={{
+            minWidth: "100px",
+            textAlign: "right",
+          }}
+        >
           {self.macro}
         </div>
-        <div style={{ minWidth: "100px", textAlign: "left" }}>{self.micro}</div>
+        <div
+          style={{
+            minWidth: "100px",
+            textAlign: "left",
+          }}
+        >
+          {self.micro}
+        </div>
       </div>
     </div>
   )
