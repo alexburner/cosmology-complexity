@@ -22,43 +22,19 @@ export function App() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 80,
+        gap: 50,
       }}
     >
       <div>
-        <LayerNesting layers={LAYERS} height={400} />
-      </div>
-      <div>
         <LayerTable layers={LAYERS} />
       </div>
+      <div>
+        <LayerNesting layers={LAYERS} height={400} />
+      </div>
+      <div>big bloom</div>
     </div>
   )
 }
-
-const LayerTable: FC<{
-  layers: typeof LAYERS
-}> = ({ layers }) => (
-  <table>
-    <thead>
-      <tr>
-        <th style={{ textAlign: "center" }}>macro</th>
-        <th style={{ textAlign: "center" }}>micro</th>
-      </tr>
-    </thead>
-    <tbody>
-      {layers.map((layer, i) => (
-        <tr key={i}>
-          <td style={{ textAlign: "center", padding: "0 8px" }}>
-            {layer.macro}
-          </td>
-          <td style={{ textAlign: "center", padding: "0 8px" }}>
-            {layer.micro}
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-)
 
 const LayerNesting: FC<{
   layers: typeof LAYERS
@@ -67,7 +43,6 @@ const LayerNesting: FC<{
 }> = ({ layers, index = 0, height }) => {
   const self = layers[index]
   if (!self) return null // Unreachable
-  const hue = (index / layers.length) * 0.7 - 0.05
   const impact = (layers.length - index) / layers.length
   return (
     <div
@@ -75,7 +50,7 @@ const LayerNesting: FC<{
         padding: index === 0 ? "10px 10px 12px" : "10px 10px",
         margin: "0 0 10px",
         borderRadius: `${impact * 12 + 12}px`,
-        background: `hsl(${hue}turn 60% 70%)`,
+        background: `hsl(${hue(index, layers.length)}turn 60% 70%)`,
         border: `1px dotted #333`,
         width: "auto",
       }}
@@ -89,12 +64,42 @@ const LayerNesting: FC<{
           lineHeight: "1.25em",
           display: "flex",
           justifyContent: "center",
-          gap: 40,
+          gap: 30,
         }}
       >
-        <div style={{ width: "100px", textAlign: "right" }}>{self.macro}</div>
-        <div style={{ width: "100px", textAlign: "left" }}>{self.micro}</div>
+        <div style={{ minWidth: "100px", textAlign: "right" }}>
+          {self.macro}
+        </div>
+        <div style={{ minWidth: "100px", textAlign: "left" }}>{self.micro}</div>
       </div>
     </div>
   )
 }
+
+const LayerTable: FC<{
+  layers: typeof LAYERS
+}> = ({ layers }) => (
+  <table>
+    <thead>
+      <tr>
+        <th>macro</th>
+        <th>micro</th>
+      </tr>
+    </thead>
+    <tbody>
+      {layers.map((layer, i) => (
+        <tr
+          key={i}
+          style={{
+            background: `hsl(${hue(i, layers.length)}turn 60% 70%)`,
+          }}
+        >
+          <td>{layer.macro}</td>
+          <td>{layer.micro}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
+
+const hue = (index: number, length: number) => (index / length) * 0.64 - 0.04
