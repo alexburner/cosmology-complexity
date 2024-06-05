@@ -37,6 +37,7 @@ export function App() {
         <LayerNesting layers={LAYERS} height={400} />
         <You />
         <BigBloom />
+        <Multiverse />
       </div>
       <div style={{ display: "none" }}>
         <LayerTable layers={LAYERS} />
@@ -60,6 +61,41 @@ const BigBloom: FC = () => (
   </div>
 )
 
+const Multiverse: FC = () => {
+  const WIDTH = 800
+  const HEIGHT = 300
+  const verses = new Array(150).fill(null).map(() => ({
+    x: Math.random() * WIDTH,
+    y: Math.random() * HEIGHT,
+    r: Math.random() * 75 + 0,
+  }))
+  return (
+    <div
+      style={{
+        margin: "0 -100px",
+        position: "relative",
+        width: `${WIDTH - 200}px`,
+        height: `${HEIGHT}px`,
+      }}
+    >
+      {verses.map((verse, i) => (
+        <div
+          key={i}
+          className="verse"
+          style={{
+            position: "absolute",
+            top: `${verse.y}px`,
+            left: `${verse.x}px`,
+            width: `${verse.r}px`,
+            height: `${verse.r}px`,
+            zIndex: 1000 - verse.r,
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
 const LayerNesting: FC<{
   layers: typeof LAYERS
   index?: number
@@ -70,6 +106,7 @@ const LayerNesting: FC<{
   const impact = (layers.length - index) / layers.length
   return (
     <div
+      className="verses"
       style={{
         padding: "10px 10px",
         margin: "0 0 10px",
