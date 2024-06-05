@@ -14,10 +14,34 @@ table {
 th,
 td {
   text-align: center;
-  padding: 8px 0;
-  width: 160px;
+  padding: 16px 0;
+  width: 180px;
 }
 
 td {
   border: 1px dotted #333;
+}
+
+.big-bloom {
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+  border: 1px dotted #333;
+  background: white;
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-bloom .line {
+  position: absolute;
+  left: 50%;
+  top: -542px;
+  bottom: 120px;
+  /* transform: translateX(-50%); */
+  border-right: 1px dotted #333;
 }

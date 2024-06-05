@@ -12,6 +12,14 @@ const LAYERS = [
   { macro: "cultures", micro: "abstraction" },
 ] as const
 
+/**
+ * micro small —form-into-> large
+ *    large composed of small
+ *    (many awareness|perspective > form into abstraction)
+ * macro small —form-within-> large
+ *    large fosters small
+ */
+
 export function App() {
   return (
     <div
@@ -22,14 +30,17 @@ export function App() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 50,
+        gap: 60,
       }}
     >
       <div>
         <LayerNesting layers={LAYERS} height={400} />
+        <div className="big-bloom">
+          <span>big bloom</span>
+          <div className="line" />
+        </div>
       </div>
-      <div>big bloom</div>
-      <div>
+      <div style={{ display: "none" }}>
         <LayerTable layers={LAYERS} />
       </div>
     </div>
@@ -61,15 +72,15 @@ const LayerNesting: FC<{
       <div
         style={{
           paddingBottom: index === 0 ? "1px" : "0px",
-          lineHeight: "1.5em",
+          lineHeight: "2.5em",
           display: "flex",
           justifyContent: "center",
-          gap: 30,
+          gap: 60,
         }}
       >
         <div
           style={{
-            minWidth: "100px",
+            minWidth: "105px",
             textAlign: "right",
           }}
         >
@@ -77,7 +88,7 @@ const LayerNesting: FC<{
         </div>
         <div
           style={{
-            minWidth: "100px",
+            minWidth: "105px",
             textAlign: "left",
           }}
         >
