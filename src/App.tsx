@@ -26,19 +26,17 @@ export function App() {
       style={{
         position: "fixed",
         inset: 0,
-        padding: "3%",
+        padding: "7% 0",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         gap: 60,
       }}
     >
-      <div>
+      <div style={{ position: "relative" }}>
         <LayerNesting layers={LAYERS} height={400} />
-        <div className="big-bloom">
-          <span>big bloom</span>
-          <div className="line" />
-        </div>
+        <You />
+        <BigBloom />
       </div>
       <div style={{ display: "none" }}>
         <LayerTable layers={LAYERS} />
@@ -46,6 +44,21 @@ export function App() {
     </div>
   )
 }
+
+const You: FC = () => (
+  <div className="you">
+    <div>▲</div>
+    <div className="head">●</div>
+    <div>大</div>
+  </div>
+)
+
+const BigBloom: FC = () => (
+  <div className="big-bloom">
+    <span>big bloom</span>
+    <div className="line" />
+  </div>
+)
 
 const LayerNesting: FC<{
   layers: typeof LAYERS
