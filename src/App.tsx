@@ -5,8 +5,8 @@ const LAYERS = [
   { macro: "galaxies", micro: "particles" },
   { macro: "stars", micro: "atoms" },
   { macro: "planets", micro: "molecules" },
-  { macro: "geomes", micro: "biomolecules" },
-  { macro: "biomes", micro: "cells" },
+  { macro: "physiotopes", micro: "biomolecules" },
+  { macro: "biotopes", micro: "cells" },
   { macro: "organisms", micro: "organs" },
   { macro: "collectives", micro: "awareness" },
   { macro: "cultures", micro: "abstraction" },
@@ -134,7 +134,7 @@ const LayerNesting: FC<{
             textAlign: "right",
           }}
         >
-          {self.macro}
+          {self.micro}
         </div>
         <div
           style={{
@@ -142,7 +142,7 @@ const LayerNesting: FC<{
             textAlign: "left",
           }}
         >
-          {self.micro}
+          {self.macro}
         </div>
       </div>
     </div>
