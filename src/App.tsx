@@ -8,8 +8,8 @@ const LAYERS = [
   { macro: "physiotopes", micro: "biomolecules" },
   { macro: "biotopes", micro: "cells" },
   { macro: "organisms", micro: "organs" },
-  { macro: "collectives", micro: "awareness" },
-  { macro: "cultures", micro: "abstraction" },
+  { macro: "collectives", micro: "perceptions" },
+  { macro: "cultures", micro: "reflections" },
 ] as const
 
 /**
@@ -48,9 +48,9 @@ export function App() {
 
 const You: FC = () => (
   <div className="you">
-    <div>▲</div>
+    <div className="arrow">▲</div>
     <div className="head">●</div>
-    <div>大</div>
+    <div className="body">大</div>
   </div>
 )
 

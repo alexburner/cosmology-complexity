@@ -24,7 +24,7 @@ td {
 
 .you {
   position: absolute;
-  top: 107px;
+  top: 105px;
   left: -0.5px;
   right: 0;
   z-index: 100;
@@ -33,12 +33,16 @@ td {
   align-items: center;
   font-weight: bold;
   font-size: 16px;
-  gap: 35px;
+  /* gap: 35px; */
 }
 
 .you .head {
-  font-size: 25px;
-  padding-bottom: 1px;
+  margin-top: 58px;
+  font-size: 24px;
+}
+
+.you .body {
+  margin-top: -11px;
 }
 
 .big-bloom {
