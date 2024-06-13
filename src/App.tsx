@@ -8,8 +8,8 @@ const LAYERS = [
   { macro: "physiotopes", micro: "biomolecules" },
   { macro: "biotopes", micro: "cells" },
   { macro: "organisms", micro: "organs" },
-  { macro: "collectives", micro: "perceptions" },
-  { macro: "cultures", micro: "reflections" },
+  { macro: "collectives", micro: "awares" },
+  { macro: "cultures", micro: "abstracts" },
 ] as const
 
 /**
