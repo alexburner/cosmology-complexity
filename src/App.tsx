@@ -8,8 +8,8 @@ const LAYERS = [
   { macro: "physiotopes", micro: "biomolecules" },
   { macro: "biotopes", micro: "cells" },
   { macro: "organisms", micro: "organs" },
-  { macro: "collectives", micro: "awares" },
-  { macro: "cultures", micro: "abstracts" },
+  { macro: "( collectives )", micro: "( awareness )" },
+  { macro: "( cultures )", micro: "( abstraction )" },
 ] as const
 
 /**
@@ -41,6 +41,59 @@ export function App() {
       </div>
       <div style={{ display: "none" }}>
         <LayerTable layers={LAYERS} />
+      </div>
+    </div>
+  )
+}
+
+const LayerNesting: FC<{
+  layers: typeof LAYERS
+  index?: number
+  height: number
+}> = ({ layers, index = 0, height }) => {
+  const self = layers[index]
+  if (!self) return null // Unreachable
+  const impact = (layers.length - index) / layers.length
+  return (
+    <div
+      className="verses"
+      style={{
+        padding: "10px 10px",
+        margin: "0 0 10px",
+        borderRadius: `${impact * 64 + 12}px`,
+        background: `hsl(${hue(index, layers.length)}turn 60% 70%)`,
+        border: `1px dotted #333`,
+        width: "auto",
+      }}
+    >
+      {index + 1 < layers.length && (
+        <LayerNesting layers={layers} index={index + 1} height={height} />
+      )}
+      <div
+        style={{
+          paddingBottom: index === 0 ? "1px" : "0px",
+          lineHeight: "2.5em",
+          display: "flex",
+          justifyContent: "center",
+          gap: 60,
+        }}
+      >
+        <div
+          style={{
+            minWidth: "120px",
+            textAlign: "right",
+          }}
+        >
+          {self.micro}
+        </div>
+        <div
+          style={{
+            minWidth: "120px",
+            textAlign: "left",
+          }}
+        >
+          {self.macro}
+        </div>
       </div>
     </div>
   )
@@ -92,59 +145,6 @@ const Multiverse: FC = () => {
           }}
         />
       ))}
-    </div>
-  )
-}
-
-const LayerNesting: FC<{
-  layers: typeof LAYERS
-  index?: number
-  height: number
-}> = ({ layers, index = 0, height }) => {
-  const self = layers[index]
-  if (!self) return null // Unreachable
-  const impact = (layers.length - index) / layers.length
-  return (
-    <div
-      className="verses"
-      style={{
-        padding: "10px 10px",
-        margin: "0 0 10px",
-        borderRadius: `${impact * 64 + 12}px`,
-        background: `hsl(${hue(index, layers.length)}turn 60% 70%)`,
-        border: `1px dotted #333`,
-        width: "auto",
-      }}
-    >
-      {index + 1 < layers.length && (
-        <LayerNesting layers={layers} index={index + 1} height={height} />
-      )}
-      <div
-        style={{
-          paddingBottom: index === 0 ? "1px" : "0px",
-          lineHeight: "2.5em",
-          display: "flex",
-          justifyContent: "center",
-          gap: 60,
-        }}
-      >
-        <div
-          style={{
-            minWidth: "105px",
-            textAlign: "right",
-          }}
-        >
-          {self.micro}
-        </div>
-        <div
-          style={{
-            minWidth: "105px",
-            textAlign: "left",
-          }}
-        >
-          {self.macro}
-        </div>
-      </div>
     </div>
   )
 }
