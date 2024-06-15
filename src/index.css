@@ -37,7 +37,7 @@ td {
 }
 
 .you .head {
-  margin-top: 59px;
+  margin-top: 61px;
   font-size: 24px;
 }
 
@@ -50,7 +50,7 @@ td {
   margin-top: 30px;
   position: relative;
   z-index: 10;
-  border: 1px dotted #333;
+  border: 1px solid #444;
   background: white;
   border-radius: 100px;
   width: 120px;
@@ -66,7 +66,7 @@ td {
   top: -550px;
   bottom: 120px;
   transform: translateX(-1px);
-  border-right: 1px dotted #333;
+  border-right: 1px solid #444;
 }
 
 .verse {

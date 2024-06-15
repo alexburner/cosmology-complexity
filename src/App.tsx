@@ -8,8 +8,8 @@ const LAYERS = [
   { macro: "physiotopes", micro: "biomolecules" },
   { macro: "biotopes", micro: "cells" },
   { macro: "organisms", micro: "organs" },
-  { macro: "( collectives )", micro: "( awareness )" },
-  { macro: "( cultures )", micro: "( abstraction )" },
+  { macro: "( collectives )", micro: "( awarenesses )" },
+  { macro: "( cultures )", micro: "( abstractions )" },
 ] as const
 
 /**
@@ -71,25 +71,26 @@ const LayerNesting: FC<{
       )}
       <div
         style={{
+          padding: "0 5px",
           paddingBottom: index === 0 ? "1px" : "0px",
           lineHeight: "2.5em",
           display: "flex",
           justifyContent: "center",
-          gap: 60,
+          gap: 30,
         }}
       >
         <div
           style={{
-            minWidth: "120px",
-            textAlign: "right",
+            minWidth: "150px",
+            textAlign: "center",
           }}
         >
           {self.micro}
         </div>
         <div
           style={{
-            minWidth: "120px",
-            textAlign: "left",
+            minWidth: "150px",
+            textAlign: "center",
           }}
         >
           {self.macro}
