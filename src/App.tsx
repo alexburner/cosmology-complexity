@@ -1,13 +1,13 @@
 import { FC } from "react"
 
 const LAYERS = [
-  { macro: "cosmic web", micro: "quantum foam" },
+  { macro: "cosmic web", micro: "quantum realm" },
   { macro: "galaxies", micro: "particles" },
   { macro: "stars", micro: "atoms" },
   { macro: "planets", micro: "molecules" },
-  { macro: "physiotopes", micro: "biomolecules" },
+  { macro: "geotopes", micro: "biomolecules" },
   { macro: "biotopes", micro: "cells" },
-  { macro: "organisms", micro: "organs" },
+  { macro: "creatures", micro: "organs" },
   { macro: "( collectives )", micro: "( awarenesses )" },
   { macro: "( cultures )", micro: "( abstractions )" },
 ] as const
@@ -116,9 +116,9 @@ const BigBloom: FC = () => (
 )
 
 const Multiverse: FC = () => {
-  const WIDTH = 800
-  const HEIGHT = 300
-  const verses = new Array(150).fill(null).map(() => ({
+  const WIDTH = 1000
+  const HEIGHT = 1200
+  const verses = new Array(800).fill(null).map(() => ({
     x: Math.random() * WIDTH,
     y: Math.random() * HEIGHT,
     r: Math.random() * 75 + 0,
@@ -126,8 +126,10 @@ const Multiverse: FC = () => {
   return (
     <div
       style={{
-        margin: "0 -100px",
-        position: "relative",
+        zIndex: "-1",
+        position: "absolute",
+        top: "-300px",
+        left: "-200px",
         width: `${WIDTH - 200}px`,
         height: `${HEIGHT}px`,
       }}
