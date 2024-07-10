@@ -102,7 +102,7 @@ const LayerNesting: FC<{
 
 const You: FC = () => (
   <div className="you">
-    <div className="arrow">▲</div>
+    {/* <div className="arrow">▲</div> */}
     <div className="head">●</div>
     <div className="body">大</div>
   </div>
