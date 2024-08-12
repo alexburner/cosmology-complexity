@@ -7,6 +7,86 @@ body {
   letter-spacing: 0.03em;
 }
 
+.container {
+  position: fixed;
+  inset: 0;
+  padding: 5vh 0;
+}
+
+.nests {
+  display: flex;
+  justify-content: center;
+}
+
+.layer {
+  padding: 12px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: relative;
+}
+
+.layer.left {
+  padding-right: 0;
+  align-items: end;
+  border-bottom-right-radius: 0px !important;
+}
+
+.layer.right {
+  padding-left: 0;
+  align-items: start;
+  border-bottom-left-radius: 0px !important;
+}
+
+.label {
+  width: 120px;
+  padding: 0 5px 1px;
+  line-height: 2.25em;
+  /* text-align: center; */
+  font-size: 14px;
+  border-radius: 50px;
+}
+
+.left .label {
+  margin-right: 24px;
+  text-align: right;
+}
+
+.right .label {
+  margin-left: 24px;
+  text-align: left;
+}
+
+.curve {
+  position: absolute;
+  background-color: transparent;
+  bottom: -100px;
+  height: 100px;
+  width: 50px;
+}
+
+.left .curve {
+  border-top-right-radius: 25px;
+}
+
+.right .curve {
+  border-top-left-radius: 25px;
+}
+
+/*
+
+
+
+
+
+
+
+
+*/
+
 table {
   border-collapse: collapse;
 }
