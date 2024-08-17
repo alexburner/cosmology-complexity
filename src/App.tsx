@@ -52,9 +52,9 @@ const LayerNest: FC<{
   align: "left" | "right"
 }> = ({ layers, index: index = 0, align }) => {
   const hue = calcHue(index, layers.length)
-  const impact = (layers.length - index) / layers.length
-  const exteriorRadius = `${impact * 74 + 12}px`
-  const interiorRadius = `${impact * 20 + 20}px`
+  const depthImpact = (layers.length - index) / layers.length
+  const exteriorRadius = `${depthImpact * 74 + 12}px`
+  const interiorRadius = `${depthImpact * 20 + 20}px`
   return (
     <div
       className={`layer ${align}`}
@@ -67,9 +67,17 @@ const LayerNest: FC<{
       }}
     >
       <div
-        className="curve"
+        className="curve bottom"
         style={{
           boxShadow: `0 -50px 0 0 ${`hsl(${hue}turn 60% 70%)`}`,
+          ...(align === "left"
+            ? { borderTopRightRadius: interiorRadius }
+            : { borderTopLeftRadius: interiorRadius }),
+        }}
+      />
+      <div
+        className="curve top"
+        style={{
           ...(align === "left"
             ? { borderTopRightRadius: interiorRadius }
             : { borderTopLeftRadius: interiorRadius }),
@@ -86,8 +94,6 @@ const LayerNest: FC<{
       <div
         className="label"
         style={{
-          background: `hsl(${hue}turn 60% 70%)`,
-          // border: `1px solid hsl(${hue}turn 60% 70%)`,
           position: "absolute",
           bottom: "10px",
           transform: `translateX(${align === "left" ? "" : "-"}${

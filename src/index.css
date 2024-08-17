@@ -11,11 +11,15 @@ body {
   position: fixed;
   inset: 0;
   padding: 5vh 0;
+  overflow: scroll;
 }
 
 .nests {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  height: 644px;
+  overflow: hidden;
 }
 
 .layer {
@@ -43,7 +47,7 @@ body {
 }
 
 .label {
-  width: 120px;
+  width: 128px;
   padding: 0 5px 1px;
   line-height: 2.25em;
   text-align: center;
@@ -53,21 +57,27 @@ body {
 }
 
 .left .label {
-  margin-right: 12px;
+  margin-right: 14px;
   /* text-align: right; */
 }
 
 .right .label {
-  margin-left: 12px;
+  margin-left: 14px;
   /* text-align: left; */
 }
 
 .curve {
   position: absolute;
   background-color: transparent;
-  bottom: -101px; /* + border */
   height: 100px;
   width: 100px;
+}
+
+.curve.bottom {
+  bottom: -101px; /* + border */
+}
+.curve.top {
+  top: -1px; /* + border */
 }
 
 /*
