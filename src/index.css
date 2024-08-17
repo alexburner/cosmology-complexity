@@ -63,17 +63,9 @@ body {
 .curve {
   position: absolute;
   background-color: transparent;
-  bottom: -100px;
+  bottom: -101px; /* + border */
   height: 100px;
-  width: 50px;
-}
-
-.left .curve {
-  border-top-right-radius: 25px;
-}
-
-.right .curve {
-  border-top-left-radius: 25px;
+  width: 100px;
 }
 
 /*
@@ -81,76 +73,26 @@ body {
 
 
 
-
-
-
-
 */
 
-table {
-  border-collapse: collapse;
+.layer.left {
+  border: 1px solid #333;
+  border-right: none;
 }
 
-th,
-td {
-  text-align: center;
-  padding: 16px 0;
-  width: 180px;
+.layer.right {
+  border: 1px solid #333;
+  border-left: none;
 }
 
-td {
-  border: 1px dotted #333;
+.left .curve {
+  border: 1px solid #333;
+  border-left: none;
+  border-bottom: none;
 }
 
-.you {
-  position: absolute;
-  top: 105px;
-  left: -0.5px;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: bold;
-  font-size: 16px;
-  /* gap: 35px; */
-}
-
-.you .head {
-  margin-top: 112px;
-  font-size: 24px;
-}
-
-.you .body {
-  margin-top: -11px;
-}
-
-.big-bloom {
-  margin: auto;
-  margin-top: -18px;
-  position: relative;
-  border: 2px solid #444;
-  background: white;
-  border-radius: 100px;
-  width: 110px;
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.big-bloom .line {
-  position: absolute;
-  left: 50%;
-  top: -542px;
-  bottom: 110px;
-  transform: translateX(-1px);
-  border-right: 1px dotted #333;
-}
-
-.verse {
-  border: 1px dotted #333;
-  background: white;
-  border-radius: 100px;
-  transform: translateX(-50%);
+.right .curve {
+  border: 1px solid #333;
+  border-right: none;
+  border-bottom: none;
 }
