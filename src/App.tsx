@@ -82,7 +82,7 @@ const LayerNest: FC<{
       <div className="label" style={{ opacity: 0 }}>
         {layers[index]}
       </div>
-      {/* visible label */}
+      {/* visible label: absolute to sit above curves */}
       <div
         className="label"
         style={{
@@ -90,6 +90,9 @@ const LayerNest: FC<{
           // border: `1px solid hsl(${hue}turn 60% 70%)`,
           position: "absolute",
           bottom: "10px",
+          transform: `translateX(${align === "left" ? "" : "-"}${
+            (layers.length - index) * 2.125
+          }px)`,
         }}
       >
         {layers[index]}
