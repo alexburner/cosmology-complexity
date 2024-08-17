@@ -35,9 +35,12 @@ const MICRO = [
 export const App: FC = () => {
   return (
     <div className="container">
-      <div className="nests">
-        <LayerNest layers={MICRO} align="left" />
-        <LayerNest layers={MACRO} align="right" />
+      <div className="universe">
+        <div className="nests">
+          <LayerNest layers={MICRO} align="left" />
+          <LayerNest layers={MACRO} align="right" />
+        </div>
+        <div className="big bloom">{/* TODO */}</div>
       </div>
     </div>
   )

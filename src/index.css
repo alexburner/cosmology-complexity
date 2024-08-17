@@ -12,6 +12,7 @@ body {
   inset: 0;
   padding: 5vh 0;
   overflow: scroll;
+  background: #efefef;
 }
 
 .nests {
