@@ -45,19 +45,19 @@ body {
   width: 120px;
   padding: 0 5px 1px;
   line-height: 2.25em;
-  /* text-align: center; */
+  text-align: center;
   font-size: 14px;
   border-radius: 50px;
 }
 
 .left .label {
-  margin-right: 24px;
-  text-align: right;
+  margin-right: 12px;
+  /* text-align: right; */
 }
 
 .right .label {
-  margin-left: 24px;
-  text-align: left;
+  margin-left: 12px;
+  /* text-align: left; */
 }
 
 .curve {
