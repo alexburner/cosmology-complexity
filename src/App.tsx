@@ -52,7 +52,6 @@ export const App: FC = () => {
 
 const You: FC = () => (
   <div className="you">
-    {/* <div className="arrow">▲</div> */}
     <div className="head">●</div>
     <div className="body">大</div>
   </div>
@@ -84,7 +83,7 @@ const LayerNest: FC<{
   const interiorRadius = `${depthImpact * 20 + 20}px`
   return (
     <div
-      className={`layer ${align}`}
+      className={`layer ${align} i-${index}`}
       style={{
         background: `hsl(${hue}turn 60% 70%)`,
         borderRadius: exteriorRadius,

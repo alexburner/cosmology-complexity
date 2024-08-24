@@ -123,6 +123,10 @@ body {
   align-self: center;
 }
 
+.i-0 > .label {
+  padding-bottom: 3px;
+}
+
 .left .label {
   margin-right: 18px;
   /* text-align: right; */
