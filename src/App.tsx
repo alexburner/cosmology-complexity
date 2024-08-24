@@ -56,7 +56,7 @@ const LayerNest: FC<{
 }> = ({ layers, index: index = 0, align }) => {
   const hue = calcHue(index, layers.length)
   const depthImpact = (layers.length - index) / layers.length
-  const exteriorRadius = `${depthImpact * 74 + 12}px`
+  const exteriorRadius = `${depthImpact * 100 + 12}px`
   const interiorRadius = `${depthImpact * 20 + 20}px`
   return (
     <div
@@ -100,7 +100,7 @@ const LayerNest: FC<{
           position: "absolute",
           bottom: "10px",
           transform: `translateX(${align === "left" ? "" : "-"}${
-            (layers.length - index) * 2.125
+            (layers.length - index) * 3.75
           }px)`,
         }}
       >
