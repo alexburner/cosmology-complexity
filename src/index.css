@@ -19,6 +19,30 @@ body {
   position: relative;
 }
 
+/* you */
+
+.you {
+  position: absolute;
+  top: 130px;
+  left: 1px;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.you .head {
+  margin-top: 88px;
+  font-size: 24px;
+}
+
+.you .body {
+  margin-top: -11px;
+}
+
 /* big bloom */
 
 .big-bloom {

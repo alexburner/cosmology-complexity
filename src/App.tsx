@@ -43,11 +43,20 @@ export const App: FC = () => {
           <LayerNest layers={MICRO} align="left" />
           <LayerNest layers={MACRO} align="right" />
         </div>
+        <You />
         <BigBloom />
       </div>
     </div>
   )
 }
+
+const You: FC = () => (
+  <div className="you">
+    {/* <div className="arrow">▲</div> */}
+    <div className="head">●</div>
+    <div className="body">大</div>
+  </div>
+)
 
 const BigBloom: FC = () => (
   <div className="big-bloom">
