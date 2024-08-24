@@ -19,18 +19,20 @@ body {
   position: relative;
 }
 
+/* big bloom */
+
 .big-bloom {
   width: 120px;
   height: 120px;
 
   background-color: white;
   border-radius: 1000px;
-  border: 1px solid #444;
+  border: 1px solid #333;
 
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 72%);
+  transform: translate(-50%, 85%);
   z-index: -1;
 
   display: flex;
@@ -38,11 +40,27 @@ body {
   align-items: center;
 }
 
+.raybox {
+  position: absolute;
+  inset: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.ray {
+  width: 12px;
+  height: 1px;
+  background-color: #666;
+}
+
+/* nests */
+
 .nests {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 646px;
+  height: 637px;
   overflow: hidden;
 }
 
@@ -73,6 +91,7 @@ body {
 .label {
   width: 128px;
   padding: 0 5px 1px;
+  margin-top: -1px;
   line-height: 2.25em;
   text-align: center;
   font-size: 14px;
@@ -104,12 +123,7 @@ body {
   top: -1px; /* + border */
 }
 
-/*
-
-
-
-
-*/
+/* nest borders */
 
 .layer.left {
   border: 1px solid #444;

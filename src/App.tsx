@@ -32,6 +32,9 @@ const MICRO = [
   "( abstractions )",
 ]
 
+const calcHue = (index: number, length: number) =>
+  (index / length) * 0.67 - 0.06
+
 export const App: FC = () => {
   return (
     <div className="container">
@@ -40,16 +43,26 @@ export const App: FC = () => {
           <LayerNest layers={MICRO} align="left" />
           <LayerNest layers={MACRO} align="right" />
         </div>
-        <div className="big-bloom">
-          <span>big bloom</span>
-        </div>
+        <BigBloom />
       </div>
     </div>
   )
 }
 
-const calcHue = (index: number, length: number) =>
-  (index / length) * 0.67 - 0.06
+const BigBloom: FC = () => (
+  <div className="big-bloom">
+    <span>big bloom</span>
+    {new Array(48).fill(null).map((_, i, l) => (
+      <div
+        key={i}
+        className="raybox"
+        style={{ rotate: `${360 * (i / l.length)}deg` }}
+      >
+        <div className="ray" />
+      </div>
+    ))}
+  </div>
+)
 
 const LayerNest: FC<{
   layers: string[]
@@ -102,7 +115,7 @@ const LayerNest: FC<{
           position: "absolute",
           bottom: "10px",
           transform: `translateX(${align === "left" ? "" : "-"}${
-            (layers.length - index) * 3.75
+            (layers.length - index) * 4
           }px)`,
         }}
       >
