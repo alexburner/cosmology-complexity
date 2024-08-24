@@ -15,11 +15,34 @@ body {
   background: #efefef;
 }
 
+.universe {
+  position: relative;
+}
+
+.big-bloom {
+  width: 120px;
+  height: 120px;
+
+  background-color: white;
+  border-radius: 1000px;
+  border: 1px solid #444;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 72%);
+  z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nests {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 644px;
+  height: 646px;
   overflow: hidden;
 }
 
