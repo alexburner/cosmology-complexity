@@ -23,7 +23,7 @@ body {
 
 .you {
   position: absolute;
-  top: 130px;
+  top: 220px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -31,16 +31,15 @@ body {
   flex-direction: column;
   align-items: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .you .head {
-  margin-top: 88px;
   font-size: 24px;
 }
 
 .you .body {
-  margin-top: -11px;
+  margin-top: -12px;
 }
 
 /* big bloom */
