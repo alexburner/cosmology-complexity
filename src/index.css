@@ -23,7 +23,7 @@ body {
 
 .you {
   position: absolute;
-  top: 220px;
+  top: 217px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -35,7 +35,7 @@ body {
 }
 
 .you .head {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .you .body {
