@@ -45,6 +45,7 @@ export const App: FC = () => {
         </div>
         <You />
         <BigBloom />
+        <Complexities />
       </div>
     </div>
   )
@@ -129,6 +130,56 @@ const LayerNest: FC<{
       >
         {layers[index]}
       </div>
+    </div>
+  )
+}
+
+const COMPLEXITIES = [
+  {
+    name: "existence",
+    science: "philosophy",
+    detail: "medium, fabric, potential",
+    color: "#e084cf",
+  },
+  {
+    name: "energy",
+    science: "physics",
+    detail: "electric, magnetic, nuclear",
+    color: "#e18c85",
+  },
+  {
+    name: "matter",
+    science: "chemistry",
+    detail: "atoms, molecules (elements, chemicals)",
+    color: "#e1df85",
+  },
+  {
+    name: "life",
+    science: "biology",
+    detail: "proteins, nucleic acids, cells",
+    color: "#90e185",
+  },
+  {
+    name: "mind",
+    science: "psychology",
+    detail: "attention, recollection, prediction",
+    color: "#85e0cb",
+  },
+].reverse()
+
+const Complexities: FC = () => {
+  return (
+    <div className="complexities">
+      {COMPLEXITIES.map((c) => (
+        <div
+          key={c.name}
+          className="complexity"
+          style={{ background: c.color }}
+        >
+          <div className="name">{c.name}</div>
+          <div className="science">{c.science}</div>
+        </div>
+      ))}
     </div>
   )
 }
