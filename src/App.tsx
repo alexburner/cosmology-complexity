@@ -13,8 +13,8 @@ const MACRO = [
   "galaxies",
   "stars",
   "planets",
-  "geotopes",
-  "biotopes",
+  "geomes",
+  "biomes",
   "creatures",
   "( collectives )",
   "( cultures )",
@@ -134,7 +134,7 @@ const LayerNest: FC<{
   )
 }
 
-const cS = "40%"
+const cS = "60%"
 const cL = "80%"
 const COMPLEXITIES = [
   {
