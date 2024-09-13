@@ -134,36 +134,38 @@ const LayerNest: FC<{
   )
 }
 
+const cS = "40%"
+const cL = "80%"
 const COMPLEXITIES = [
   {
     name: "existence",
     science: "philosophy",
     detail: "medium, fabric, potential",
-    color: "#e084cf",
+    color: `hsl(311.09deg ${cS} ${cL})`,
   },
   {
     name: "energy",
     science: "physics",
     detail: "electric, magnetic, nuclear",
-    color: "#e18c85",
+    color: `hsl(4.57deg ${cS} ${cL})`,
   },
   {
     name: "matter",
     science: "chemistry",
     detail: "atoms, molecules (elements, chemicals)",
-    color: "#e1df85",
+    color: `hsl(58.7deg ${cS} ${cL})`,
   },
   {
     name: "life",
     science: "biology",
     detail: "proteins, nucleic acids, cells",
-    color: "#90e185",
+    color: `hsl(112.83deg ${cS} ${cL})`,
   },
   {
     name: "mind",
     science: "psychology",
     detail: "attention, recollection, prediction",
-    color: "#85e0cb",
+    color: `hsl(166.15deg ${cS} ${cL})`,
   },
 ].reverse()
 
