@@ -61,7 +61,7 @@ const You: FC = () => (
 const BigBloom: FC = () => (
   <div className="big-bloom">
     <span>big bloom</span>
-    {new Array(48).fill(null).map((_, i, l) => (
+    {new Array(52).fill(null).map((_, i, l) => (
       <div
         key={i}
         className="raybox"
@@ -134,8 +134,8 @@ const LayerNest: FC<{
   )
 }
 
-const cS = "60%"
-const cL = "80%"
+const cS = "52%"
+const cL = "82%"
 const COMPLEXITIES = [
   {
     name: "existence",
@@ -188,13 +188,13 @@ const Complexities: FC = () => {
           className="complexity"
           style={{ background: c.color }}
         >
-          <div className="side left">
-            <div className="dimension">{c.dimension}</div>
-            <div className="shape">{c.shape}</div>
-          </div>
           <div className="side right">
             <div className="name">{c.name}</div>
             <div className="science">{c.science}</div>
+          </div>
+          <div className="side left">
+            <div className="dimension">{c.dimension}</div>
+            <div className="shape">{c.shape}</div>
           </div>
         </div>
       ))}
