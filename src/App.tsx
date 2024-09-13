@@ -141,30 +141,40 @@ const COMPLEXITIES = [
     name: "existence",
     science: "philosophy",
     detail: "medium, fabric, potential",
+    dimension: "0d",
+    shape: "paths",
     color: `hsl(311.09deg ${cS} ${cL})`,
   },
   {
     name: "energy",
     science: "physics",
     detail: "electric, magnetic, nuclear",
+    dimension: "1d",
+    shape: "waves",
     color: `hsl(4.57deg ${cS} ${cL})`,
   },
   {
     name: "matter",
     science: "chemistry",
     detail: "atoms, molecules (elements, chemicals)",
+    dimension: "2d",
+    shape: "spirals",
     color: `hsl(58.7deg ${cS} ${cL})`,
   },
   {
     name: "life",
     science: "biology",
     detail: "proteins, nucleic acids, cells",
+    dimension: "3d",
+    shape: "tangles",
     color: `hsl(112.83deg ${cS} ${cL})`,
   },
   {
     name: "mind",
     science: "psychology",
     detail: "attention, recollection, prediction",
+    dimension: "4d",
+    shape: "hidden\nvariables",
     color: `hsl(166.15deg ${cS} ${cL})`,
   },
 ].reverse()
@@ -178,8 +188,14 @@ const Complexities: FC = () => {
           className="complexity"
           style={{ background: c.color }}
         >
-          <div className="name">{c.name}</div>
-          <div className="science">{c.science}</div>
+          <div className="side left">
+            <div className="dimension">{c.dimension}</div>
+            <div className="shape">{c.shape}</div>
+          </div>
+          <div className="side right">
+            <div className="name">{c.name}</div>
+            <div className="science">{c.science}</div>
+          </div>
         </div>
       ))}
     </div>

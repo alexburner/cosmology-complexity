@@ -23,7 +23,7 @@ body {
 
 .you {
   position: absolute;
-  top: 217px;
+  top: 220px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -186,7 +186,7 @@ body {
   transform: translateX(-50%);
   z-index: 20;
 
-  width: 820px;
+  width: 890px;
   height: 540px;
   border-top: 1px dotted #444;
   border-bottom: 1px dotted #444;
@@ -200,7 +200,7 @@ body {
 
 .complexity {
   height: calc(100% * (1 / 5));
-  padding: 0 22px;
+  padding: 0 18px;
 
   display: flex;
   align-items: center;
@@ -211,11 +211,40 @@ body {
   border-bottom: 1px dotted #444;
 }
 
-.complexity .name {
-  padding-left: 2px;
+.complexity .side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 130px;
+
+  transform: scale(0.9);
 }
 
-.complexity .science {
+.complexity .side.left {
+  gap: 0.25rem;
+}
+
+.complexity .side.right {
+  gap: 0.45rem;
+  /* align-items: end; */
+}
+
+.complexity .dimension {
+  font-size: 24px;
   text-transform: uppercase;
-  font-size: 0.8em;
+}
+.complexity .shape {
+  font-size: 16px;
+  margin-left: -2px;
+  white-space: pre;
+}
+.complexity .name {
+  font-size: 19px;
+}
+.complexity .science {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-right: -2px;
 }
