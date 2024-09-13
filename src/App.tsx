@@ -61,7 +61,7 @@ const You: FC = () => (
 const BigBloom: FC = () => (
   <div className="big-bloom">
     <span>big bloom</span>
-    {new Array(52).fill(null).map((_, i, l) => (
+    {new Array(48).fill(null).map((_, i, l) => (
       <div
         key={i}
         className="raybox"
