@@ -138,9 +138,9 @@ const cS = "52%"
 const cL = "82%"
 const COMPLEXITIES = [
   {
-    name: "existence",
+    name: "medium",
     science: "philosophy",
-    detail: "medium, fabric, potential",
+    detail: "existence, fabric, potential",
     dimension: "0d",
     shape: "paths",
     color: `hsl(311.09deg ${cS} ${cL})`,
