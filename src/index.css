@@ -12,7 +12,7 @@ body {
   inset: 0;
   padding: 10vh 0;
   overflow: scroll;
-  background: #efefef;
+  background: #e8e8e8;
 }
 
 .universe {
@@ -61,7 +61,7 @@ big bloom
   border: 1px solid #333;
 
   position: absolute;
-  bottom: 20px;
+  bottom: 16px;
   left: 50%;
   transform: translate(-50%, 85%);
   z-index: -1;
@@ -97,12 +97,12 @@ complexities
 
 .complexities {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
 
-  width: 840px;
+  width: 2000px;
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
   /* border-bottom: 1px dotted #444; */
@@ -118,7 +118,7 @@ complexities
 
 .complexity {
   height: 109.19px;
-  padding: 0 3px;
+  padding: 0 570px;
 
   display: flex;
   align-items: center;
@@ -186,30 +186,31 @@ complexities
 
 .complexity.beyond .side,
 .complexity.nothing .side {
-  opacity: 0.8;
+  opacity: 0.75;
+  font-style: italic;
 }
 
 .complexity.beyond {
-  background-color: #f0f0f0;
-  box-shadow: 1px 1px 12px 19px #f0f0f0;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px 19px #fff;
   height: calc(27px + 109.19px);
   border-radius: 60px 60px 0 0;
 }
 .complexity.beyond .side {
-  top: -9px;
-  left: 1px;
+  top: -8px;
+  /* left: 1px; */
 }
 
 .complexity.nothing {
-  background-color: #f0f0f0;
-  box-shadow: 1px 1px 12px 19px #f0f0f0;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px 19px #fff;
   height: calc(-22px + 109.19px);
   border-radius: 0 0 60px 60px;
   margin: 0 -5px;
 }
 .complexity.nothing .side {
   top: -8px;
-  left: 6px;
+  left: 5px;
 }
 
 /*
