@@ -123,9 +123,9 @@ complexities
   /* border-bottom: 1px dotted #777; */
 }
 
-.complexity:last-child {
+/* .complexity:last-child {
   height: calc(1px + calc(100% * (1 / 5)));
-}
+} */
 
 .complexity .side {
   display: flex;
@@ -173,6 +173,31 @@ complexities
   font-size: 13px;
   text-transform: uppercase;
   margin-right: -2px;
+}
+
+/* named hacks */
+
+.complexity.existence {
+  height: calc(-32px + calc(100% * (1 / 5)));
+}
+
+.complexity.existence .side {
+  top: -4px;
+}
+
+.complexity.nothing {
+  background-color: #f8f8f8;
+  /* border-top: 1px dotted #777; */
+  border-bottom: 1px dashed #777;
+  /* margin-top: 30px; */
+  height: calc(24px + calc(100% * (1 / 5)));
+
+  position: relative;
+  z-index: -4;
+}
+
+.complexity.nothing .side {
+  top: 6px;
 }
 
 /*

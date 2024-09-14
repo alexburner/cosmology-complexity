@@ -138,9 +138,9 @@ const cS = "52%"
 const cL = "82%"
 const COMPLEXITIES = [
   {
-    name: "medium",
+    name: "existence",
     science: "philosophy",
-    detail: "existence, fabric, potential",
+    detail: "medium, fabric, potential",
     dimension: "0d",
     shape: "paths",
     color: `hsl(311.09deg ${cS} ${cL})`,
@@ -182,10 +182,13 @@ const COMPLEXITIES = [
 const Complexities: FC = () => {
   return (
     <div className="complexities">
+      {/* <div className="complexity beyond">
+        <div className="name">beyond</div>
+      </div> */}
       {COMPLEXITIES.map((c) => (
         <div
           key={c.name}
-          className="complexity"
+          className={`complexity ${c.name}`}
           style={{
             background: c.color,
             boxShadow: `1px 1px 12px 19px ${c.color}`,
@@ -201,6 +204,11 @@ const Complexities: FC = () => {
           </div>
         </div>
       ))}
+      <div className="complexity nothing">
+        <div className="side right">
+          <div className="name">nothing</div>
+        </div>
+      </div>
     </div>
   )
 }
