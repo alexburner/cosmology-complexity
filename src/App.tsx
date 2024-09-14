@@ -186,7 +186,10 @@ const Complexities: FC = () => {
         <div
           key={c.name}
           className="complexity"
-          style={{ background: c.color }}
+          style={{
+            background: c.color,
+            boxShadow: `1px 1px 12px 19px ${c.color}`,
+          }}
         >
           <div className="side right">
             <div className="name">{c.name}</div>
