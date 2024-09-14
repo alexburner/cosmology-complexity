@@ -97,12 +97,12 @@ complexities
 
 .complexities {
   position: absolute;
-  top: 20px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
 
-  width: 864px;
+  width: 840px;
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
   /* border-bottom: 1px dotted #444; */
@@ -118,7 +118,7 @@ complexities
 
 .complexity {
   height: 109.19px;
-  padding: 0 10px;
+  padding: 0 3px;
 
   display: flex;
   align-items: center;
@@ -184,18 +184,15 @@ complexities
   top: -23px;
 }
 
-.complexity.beyond,
-.complexity.nothing {
-  background-color: #f0f0f0;
-  box-shadow: 1px 1px 12px 19px #f0f0f0;
-}
 .complexity.beyond .side,
 .complexity.nothing .side {
   opacity: 0.8;
 }
 
 .complexity.beyond {
-  height: calc(18px + 109.19px);
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 12px 19px #f0f0f0;
+  height: calc(27px + 109.19px);
   border-radius: 60px 60px 0 0;
 }
 .complexity.beyond .side {
@@ -204,6 +201,8 @@ complexities
 }
 
 .complexity.nothing {
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 12px 19px #f0f0f0;
   height: calc(-22px + 109.19px);
   border-radius: 0 0 60px 60px;
   margin: 0 -5px;
