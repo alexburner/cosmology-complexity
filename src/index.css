@@ -95,7 +95,7 @@ complexities
 
 .complexities {
   position: absolute;
-  top: 150px;
+  top: 34px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -122,10 +122,6 @@ complexities
 
   /* border-bottom: 1px dotted #777; */
 }
-
-/* .complexity:last-child {
-  height: calc(1px + calc(100% * (1 / 5)));
-} */
 
 .complexity .side {
   display: flex;
@@ -178,27 +174,35 @@ complexities
 /* named hacks */
 
 .complexity.existence {
-  height: calc(-32px + calc(100% * (1 / 5)));
+  height: calc(6px + calc(100% * (1 / 5)));
+}
+.complexity.existence .side {
+  top: -20px;
 }
 
-.complexity.existence .side {
-  top: -4px;
+.complexity.beyond,
+.complexity.nothing {
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 12px 19px #f0f0f0;
+}
+.complexity.beyond .side,
+.complexity.nothing .side {
+  opacity: 0.8;
 }
 
 .complexity.nothing {
-  background-color: #f8f8f8;
-  /* border-top: 1px dotted #777; */
-  border-bottom: 1px dashed #777;
-  /* margin-top: 30px; */
-  height: calc(24px + calc(100% * (1 / 5)));
-
-  position: relative;
-  z-index: -4;
+  height: calc(-32px + calc(100% * (1 / 5)));
 }
-
 .complexity.nothing .side {
-  top: 6px;
+  top: -6px;
 }
+
+.complexity.beyond {
+  height: calc(6px + calc(100% * (1 / 5)));
+}
+/* .complexity.beyond .side {
+  top: -6px;
+} */
 
 /*
 

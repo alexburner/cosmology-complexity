@@ -182,9 +182,11 @@ const COMPLEXITIES = [
 const Complexities: FC = () => {
   return (
     <div className="complexities">
-      {/* <div className="complexity beyond">
-        <div className="name">beyond</div>
-      </div> */}
+      <div className="complexity beyond">
+        <div className="side right">
+          <div className="name">beyond</div>
+        </div>
+      </div>
       {COMPLEXITIES.map((c) => (
         <div
           key={c.name}
