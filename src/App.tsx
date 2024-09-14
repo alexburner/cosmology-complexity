@@ -134,8 +134,8 @@ const LayerNest: FC<{
   )
 }
 
-const cS = "52%"
-const cL = "86%"
+const cS = "55%"
+const cL = "85%"
 const COMPLEXITIES = [
   {
     name: "existence",
@@ -173,7 +173,7 @@ const COMPLEXITIES = [
     name: "mind",
     science: "psychology",
     detail: "attention, recollection, prediction",
-    dimension: "4d",
+    dimension: "4d+",
     shape: "hidden\nvariables",
     color: `hsl(166.15deg ${cS} ${cL})`,
   },
