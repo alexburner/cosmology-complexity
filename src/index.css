@@ -142,12 +142,12 @@ complexities
   top: -20px;
 }
 
-.complexity .side.left {
+.complexity .side.poetry {
   gap: 0.33rem;
   margin-top: -3px;
 }
 
-.complexity .side.right {
+.complexity .side.prose {
   gap: 0.33rem;
   margin-top: 2px;
   /* align-items: end; */

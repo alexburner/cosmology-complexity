@@ -183,7 +183,7 @@ const Complexities: FC = () => {
   return (
     <div className="complexities">
       <div className="complexity beyond">
-        <div className="side right">
+        <div className="side prose">
           <div className="name">beyond</div>
         </div>
       </div>
@@ -196,18 +196,18 @@ const Complexities: FC = () => {
             boxShadow: `1px 1px 12px 19px ${c.color}`,
           }}
         >
-          <div className="side right">
+          <div className="side prose">
             <div className="name">{c.name}</div>
             <div className="science">{c.science}</div>
           </div>
-          <div className="side left">
+          <div className="side poetry">
             <div className="dimension">{c.dimension}</div>
             <div className="shape">{c.shape}</div>
           </div>
         </div>
       ))}
       <div className="complexity nothing">
-        <div className="side right">
+        <div className="side prose">
           <div className="name">nothing</div>
         </div>
       </div>
