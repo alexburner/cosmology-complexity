@@ -188,6 +188,9 @@ complexities
 .complexity.nothing .side {
   opacity: 0.75;
   font-style: italic;
+
+  /* too much? */
+  visibility: hidden;
 }
 
 .complexity.beyond {
@@ -197,7 +200,7 @@ complexities
   border-radius: 60px 60px 0 0;
 }
 .complexity.beyond .side {
-  top: -8px;
+  top: -6px;
   /* left: 1px; */
 }
 
