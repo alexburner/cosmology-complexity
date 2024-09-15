@@ -134,7 +134,7 @@ const LayerNest: FC<{
   )
 }
 
-const cS = "99%"
+const cS = "90%"
 const cL = "92%"
 const COMPLEXITIES = [
   {
