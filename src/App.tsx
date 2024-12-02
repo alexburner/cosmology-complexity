@@ -13,9 +13,9 @@ const MACRO = [
   "galaxies",
   "stars",
   "planets",
-  "geomes",
-  "biomes",
-  "creatures",
+  "physiotopes",
+  "autotrophs",
+  "heterotrophs",
   "( collectives )",
   "( cultures )",
 ]
@@ -60,7 +60,10 @@ const You: FC = () => (
 
 const BigBloom: FC = () => (
   <div className="big-bloom">
-    <span>big bloom</span>
+    <div className="labels">
+      <div className="left">big</div>
+      <div className="right">bloom</div>
+    </div>
     {new Array(48).fill(null).map((_, i, l) => (
       <div
         key={i}
@@ -136,6 +139,7 @@ const LayerNest: FC<{
 
 const cS = "90%"
 const cL = "92%"
+const cA = "60%"
 const COMPLEXITIES = [
   {
     name: "existence",
@@ -143,7 +147,7 @@ const COMPLEXITIES = [
     detail: "medium, fabric, potential",
     dimension: "0d",
     shape: "paths",
-    color: `hsl(311.09deg ${cS} ${cL})`,
+    color: `hsla(311.09deg, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "energy",
@@ -151,7 +155,7 @@ const COMPLEXITIES = [
     detail: "electric, magnetic, nuclear",
     dimension: "1d",
     shape: "waves",
-    color: `hsl(4.57deg ${cS} ${cL})`,
+    color: `hsla(4.57deg, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "matter",
@@ -159,7 +163,7 @@ const COMPLEXITIES = [
     detail: "atoms, molecules (elements, chemicals)",
     dimension: "2d",
     shape: "spirals",
-    color: `hsl(58.7deg ${cS} ${cL})`,
+    color: `hsla(58.7deg, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "life",
@@ -167,7 +171,7 @@ const COMPLEXITIES = [
     detail: "proteins, nucleic acids, cells",
     dimension: "3d",
     shape: "tangles",
-    color: `hsl(112.83deg ${cS} ${cL})`,
+    color: `hsla(112.83deg, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "mind",
@@ -175,7 +179,7 @@ const COMPLEXITIES = [
     detail: "attention, recollection, prediction",
     dimension: "4d",
     shape: "hidden\nvariables",
-    color: `hsl(166.15deg ${cS} ${cL})`,
+    color: `hsla(166.15deg, ${cS}, ${cL}, ${cA})`,
   },
 ].reverse()
 
@@ -183,8 +187,11 @@ const Complexities: FC = () => {
   return (
     <div className="complexities">
       <div className="complexity beyond">
-        <div className="side prose">
+        <div className="side left">
           <div className="name">beyond</div>
+        </div>
+        <div className="side right">
+          {/* <div className="science">spirituality</div> */}
         </div>
       </div>
       {COMPLEXITIES.map((c) => (
@@ -193,22 +200,25 @@ const Complexities: FC = () => {
           className={`complexity ${c.name}`}
           style={{
             background: c.color,
-            boxShadow: `1px 1px 12px 19px ${c.color}`,
+            // boxShadow: `1px 1px 12px 19px ${c.color}`,
           }}
         >
-          <div className="side prose">
+          <div className="side left">
             <div className="name">{c.name}</div>
-            <div className="science">{c.science}</div>
           </div>
-          <div className="side poetry">
-            <div className="dimension">{c.dimension}</div>
-            <div className="shape">{c.shape}</div>
+          <div className="side right">
+            {/* <div className="dimension">{c.dimension}</div>
+            <div className="shape">{c.shape}</div> */}
+            <div className="science">{c.science}</div>
           </div>
         </div>
       ))}
       <div className="complexity nothing">
-        <div className="side prose">
+        <div className="side left">
           <div className="name">nothing</div>
+        </div>
+        <div className="side right">
+          {/* <div className="science">spirituality</div> */}
         </div>
       </div>
     </div>

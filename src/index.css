@@ -53,18 +53,21 @@ big bloom
 */
 
 .big-bloom {
-  width: 106px;
-  height: 106px;
+  --size: 70px;
+  width: var(--size);
+  height: var(--size);
 
   background-color: white;
   border-radius: 1000px;
   border: 1px solid #333;
 
   position: absolute;
-  bottom: 17px;
+  /* bottom: calc(calc(var(--size) * -1) - 44px); */
+  bottom: calc(calc(var(--size) * -1) - 12px);
   left: 50%;
-  transform: translate(-50%, 85%);
+  transform: translate(-50%, -50%);
   z-index: -1;
+  /* z-index: 1; */
 
   display: flex;
   justify-content: center;
@@ -73,16 +76,34 @@ big bloom
   opacity: 0.9;
 }
 
+.big-bloom .labels {
+  position: relative;
+  font-size: 14px;
+  margin: -4px -42px 0;
+  width: 1000px;
+  height: 1rem;
+  /* border: 1px solid #333; */
+  opacity: 0.8;
+}
+.big-bloom .labels .left {
+  position: absolute;
+  right: 100%;
+}
+.big-bloom .labels .right {
+  position: absolute;
+  left: 100%;
+}
+
 .raybox {
   position: absolute;
-  inset: -20px;
+  inset: -28px;
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
 .ray {
-  width: 12px;
+  width: 16px;
   height: 1px;
   background-color: #333;
   opacity: 0.9;
@@ -97,77 +118,64 @@ complexities
 
 .complexities {
   position: absolute;
-  top: 3px;
+  top: 26px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
+  z-index: -10;
 
-  width: 2000px;
+  width: 870px;
+  /* width: 2000px; */
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
   /* border-bottom: 1px dotted #444; */
   /* border-radius: 12px; */
-  /* overflow: hidden; */
+  overflow: hidden;
   /* border-radius: 60px; */
 
   color: #111;
 
-  opacity: 0.9;
+  opacity: 0.7;
   mix-blend-mode: multiply;
 }
 
 .complexity {
-  height: 109.19px;
-  padding-left: 570px;
-  padding-right: 490px;
+  height: 108px;
+  /* padding-left: 570px; */
+  /* padding-right: 490px; */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  /* border-bottom: 1px dotted #777; */
+  border-bottom: 1px dashed #777b;
 }
 
 .complexity .side {
-  transform: scale(0.8);
+  transform: scale(0.75);
   /* opacity: 0.95; */
-  position: relative;
-  top: -20px;
-}
-
-.complexity .side.prose {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
 
-  width: 130px;
-  gap: 0.33rem;
-
-  margin-top: 2px;
+  width: 140px;
 }
-
-.complexity .side.poetry {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  text-align: center;
-
-  width: 200px;
-  gap: 0.7rem;
-
-  font-style: italic;
+.complexity .side.left {
+  text-align: left;
+}
+.complexity .side.right {
+  text-align: right;
 }
 
 .complexity .name {
-  font-size: 22px;
+  font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   opacity: 0.9;
 }
 .complexity .science {
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
-  margin-right: -2px;
+  /* margin-right: -2px; */
 }
 .complexity .dimension {
   font-size: 22px;
@@ -185,44 +193,17 @@ complexities
 
 /* named hacks */
 
-.complexity.existence {
-  height: calc(6px + 109.19px);
-}
-.complexity.existence .side {
-  top: -23px;
-}
-
 .complexity.beyond .side,
 .complexity.nothing .side {
-  opacity: 0.75;
-  font-style: italic;
-
-  /* too much? */
-  visibility: hidden;
+  opacity: 0.5;
 }
 
-.complexity.beyond {
-  background-color: #fff;
-  box-shadow: 1px 1px 12px 19px #fff;
-  height: calc(27px + 109.19px);
-  border-radius: 60px 60px 0 0;
-}
-.complexity.beyond .side {
-  top: -6px;
-  /* left: 1px; */
-}
-
+/* .complexity.beyond {} */
+/* .complexity.beyond .side {} */
 .complexity.nothing {
-  background-color: #fff;
-  box-shadow: 1px 1px 12px 19px #fff;
-  height: calc(-22px + 109.19px);
-  border-radius: 0 0 60px 60px;
-  margin: 0 -5px;
+  border-bottom: none;
 }
-.complexity.nothing .side {
-  top: -8px;
-  left: 5px;
-}
+/* .complexity.nothing .side {} */
 
 /*
 
@@ -234,7 +215,7 @@ nests
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 637px;
+  height: 634px;
   overflow: hidden;
 
   opacity: 0.75;
@@ -276,7 +257,7 @@ nests
 }
 
 .i-0 > .label {
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 .left .label {
