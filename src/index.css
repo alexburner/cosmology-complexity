@@ -53,7 +53,7 @@ big bloom
 */
 
 .big-bloom {
-  --size: 70px;
+  --size: 76px;
   width: var(--size);
   height: var(--size);
 
@@ -63,7 +63,8 @@ big bloom
 
   position: absolute;
   /* bottom: calc(calc(var(--size) * -1) - 44px); */
-  bottom: calc(calc(var(--size) * -1) - 12px);
+  /* bottom: calc(calc(var(--size) * -1) - 16px); */
+  bottom: calc(calc(var(--size) * -1) - 1px);
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -96,7 +97,7 @@ big bloom
 
 .raybox {
   position: absolute;
-  inset: -28px;
+  inset: -26px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -195,7 +196,8 @@ complexities
 
 .complexity.beyond .side,
 .complexity.nothing .side {
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  opacity: 0;
 }
 
 /* .complexity.beyond {} */
