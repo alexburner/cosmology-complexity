@@ -16,7 +16,7 @@ const MACRO = [
   "physiotopes",
   "autotrophs",
   "heterotrophs",
-  "groups",
+  "collectives",
   "~",
 ]
 
@@ -40,8 +40,8 @@ export const App: FC = () => {
     <div className="container">
       <div className="universe">
         <div className="nests">
-          <LayerNest layers={MICRO} align="left" />
-          <LayerNest layers={MACRO} align="right" />
+          <LayerNest layers={MACRO} align="left" />
+          <LayerNest layers={MICRO} align="right" />
         </div>
         <You />
         <BigBloom />
