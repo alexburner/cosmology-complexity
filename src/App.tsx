@@ -16,8 +16,7 @@ const MACRO = [
   "physiotopes",
   "autotrophs",
   "heterotrophs",
-  "collectives",
-  "~",
+  "group selves",
 ]
 
 const MICRO = [
@@ -28,20 +27,19 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "individuals",
-  "~",
+  "our selves",
 ]
 
 const calcHue = (index: number, length: number) =>
-  (index / length) * 0.67 - 0.06
+  (index / (length + 1)) * 0.67 - 0.06
 
 export const App: FC = () => {
   return (
     <div className="container">
       <div className="universe">
         <div className="nests">
-          <LayerNest layers={MACRO} align="left" />
-          <LayerNest layers={MICRO} align="right" />
+          <LayerNest layers={MICRO} align="left" />
+          <LayerNest layers={MACRO} align="right" />
         </div>
         <You />
         <BigBloom />

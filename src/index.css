@@ -27,7 +27,7 @@ you
 
 .you {
   position: absolute;
-  top: 221px;
+  top: 149px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -119,7 +119,7 @@ complexities
 
 .complexities {
   position: absolute;
-  top: 26px;
+  top: -41px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -10;
@@ -219,7 +219,7 @@ nests
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 634px;
+  height: 567px;
   overflow: hidden;
 
   opacity: 0.75;
