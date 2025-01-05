@@ -16,8 +16,8 @@ const MACRO = [
   "physiotopes",
   "autotrophs",
   "heterotrophs",
-  "( collectives )",
-  "( cultures )",
+  "groups",
+  "~",
 ]
 
 const MICRO = [
@@ -28,8 +28,8 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "( awarenesses )",
-  "( abstractions )",
+  "individuals",
+  "~",
 ]
 
 const calcHue = (index: number, length: number) =>
@@ -194,7 +194,7 @@ const Complexities: FC = () => {
           {/* <div className="science">spirituality</div> */}
         </div>
       </div>
-      {COMPLEXITIES.map((c) => (
+      {COMPLEXITIES.map((c, i, l) => (
         <div
           key={c.name}
           className={`complexity ${c.name}`}
@@ -204,7 +204,7 @@ const Complexities: FC = () => {
           }}
         >
           <div className="side left">
-            <div className="name">{c.name}</div>
+            <div className="name">{`${l.length - i - 1}d — ${c.name}`}</div>
           </div>
           <div className="side right">
             {/* <div className="dimension">{c.dimension}</div>

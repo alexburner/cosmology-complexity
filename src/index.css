@@ -63,8 +63,8 @@ big bloom
 
   position: absolute;
   /* bottom: calc(calc(var(--size) * -1) - 44px); */
-  /* bottom: calc(calc(var(--size) * -1) - 16px); */
-  bottom: calc(calc(var(--size) * -1) - 1px);
+  bottom: calc(calc(var(--size) * -1) - 9px);
+  /* bottom: calc(calc(var(--size) * -1) - 1px); */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -124,7 +124,7 @@ complexities
   transform: translateX(-50%);
   z-index: -10;
 
-  width: 870px;
+  width: 875px;
   /* width: 2000px; */
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
@@ -141,14 +141,13 @@ complexities
 
 .complexity {
   height: 108px;
-  /* padding-left: 570px; */
-  /* padding-right: 490px; */
+  /* padding: 0 15px; */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px dashed #777b;
+  border-bottom: 1px dotted #777b;
 }
 
 .complexity .side {
@@ -156,16 +155,19 @@ complexities
   /* opacity: 0.95; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   /* text-align: center; */
 
   width: 140px;
 }
 .complexity .side.left {
   text-align: left;
+  padding-left: 15px;
 }
 .complexity .side.right {
-  text-align: right;
+  /* text-align: right; */
+  text-align: center;
+  padding-right: 6px;
 }
 
 .complexity .name {
@@ -174,7 +176,7 @@ complexities
   opacity: 0.7;
 }
 .complexity .science {
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
   /* margin-right: -2px; */
 }
