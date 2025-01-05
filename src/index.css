@@ -27,7 +27,7 @@ you
 
 .you {
   position: absolute;
-  top: 149px;
+  top: 150px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -43,7 +43,7 @@ you
 }
 
 .you .body {
-  margin-top: -12px;
+  margin-top: -13px;
 }
 
 /*
@@ -147,7 +147,8 @@ complexities
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px dotted #777b;
+  /* border-bottom: 1px dotted #777b; */
+  border-bottom: 1px dotted #111b;
 }
 
 .complexity .side {
