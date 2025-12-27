@@ -27,7 +27,7 @@ you
 
 .you {
   position: absolute;
-  top: 150px;
+  top: 142px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -63,8 +63,9 @@ big bloom
 
   position: absolute;
   /* bottom: calc(calc(var(--size) * -1) - 44px); */
-  bottom: calc(calc(var(--size) * -1) - 9px);
+  /* bottom: calc(calc(var(--size) * -1) - 9px); */
   /* bottom: calc(calc(var(--size) * -1) - 1px); */
+  bottom: -8px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -220,10 +221,13 @@ nests
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 567px;
+  height: 630px;
   overflow: hidden;
 
   opacity: 0.75;
+
+  position: relative;
+  top: -67px;
 }
 
 .layer {

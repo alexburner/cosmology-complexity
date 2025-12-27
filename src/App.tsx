@@ -16,7 +16,8 @@ const MACRO = [
   "physiotopes",
   "autotrophs",
   "heterotrophs",
-  "group selves",
+  "collectives",
+  "cultures",
 ]
 
 const MICRO = [
@@ -27,11 +28,12 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "our selves",
+  "awarenesses",
+  "abstractions",
 ]
 
 const calcHue = (index: number, length: number) =>
-  (index / (length + 1)) * 0.67 - 0.06
+  (index / (length + 1)) * 0.75 - 0.06
 
 export const App: FC = () => {
   return (
