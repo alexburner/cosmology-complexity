@@ -16,8 +16,8 @@ const MACRO = [
   "physiotopes",
   "autotrophs",
   "heterotrophs",
-  "collectives",
-  "cultures",
+  "(collectives)",
+  "((cultures))",
 ]
 
 const MICRO = [
@@ -28,20 +28,20 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "awarenesses",
-  "abstractions",
+  "(awarenesses)",
+  "((abstractions))",
 ]
 
 const calcHue = (index: number, length: number) =>
-  (index / (length + 1)) * 0.7 - 0.05
+  (index / (length + 1)) * 0.71 - 0.05
 
 export const App: FC = () => {
   return (
     <div className="container">
       <div className="universe">
         <div className="nests">
-          <LayerNest layers={MICRO} align="left" />
-          <LayerNest layers={MACRO} align="right" />
+          <LayerNest layers={MACRO} align="left" />
+          <LayerNest layers={MICRO} align="right" />
         </div>
         <You />
         <BigBloom />
@@ -147,7 +147,7 @@ const COMPLEXITIES = [
     detail: "",
     dimension: "-1d",
     shape: "",
-    color: `hsla(260deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(251.09deg, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "existence",
@@ -189,6 +189,14 @@ const COMPLEXITIES = [
     shape: "hidden\nvariables",
     color: `hsla(166.15deg, ${cS}, ${cL}, ${cA})`,
   },
+  // {
+  //   name: "beyond",
+  //   science: "",
+  //   detail: "",
+  //   dimension: "5d+",
+  //   shape: "",
+  //   color: `hsla(210.15deg, ${cS}, ${cL}, ${cA})`,
+  // },
 ].reverse()
 
 const Complexities: FC = () => {

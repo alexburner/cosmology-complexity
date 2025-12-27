@@ -10,7 +10,7 @@ body {
 .container {
   position: fixed;
   inset: 0;
-  padding: 10vh 0;
+  padding: 14vh 0;
   overflow: scroll;
   background: #f4f4f4;
 }
@@ -27,7 +27,7 @@ you
 
 .you {
   position: absolute;
-  top: 142px;
+  top: 144px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -65,7 +65,7 @@ big bloom
   /* bottom: calc(calc(var(--size) * -1) - 44px); */
   /* bottom: calc(calc(var(--size) * -1) - 9px); */
   /* bottom: calc(calc(var(--size) * -1) - 1px); */
-  bottom: -9px;
+  bottom: -11px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -81,7 +81,7 @@ big bloom
 .big-bloom .labels {
   position: relative;
   font-size: 14px;
-  margin: -4px -42px 0;
+  margin: -4px -38px 0;
   width: 1000px;
   height: 1rem;
   /* border: 1px solid #333; */
@@ -129,6 +129,7 @@ complexities
   /* width: 2000px; */
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
+  /* border-top: 1px dotted #111b; */
   /* border-bottom: 1px dotted #444; */
   /* border-radius: 12px; */
   overflow: hidden;
@@ -204,6 +205,15 @@ complexities
   opacity: 0.5;
 } */
 
+/* .complexity.beyond,
+.complexity.nothing {
+  opacity: 0.5;
+  border-bottom: none;
+} */
+/* .complexity.mind {
+  border-top: 1px dotted #111b;
+} */
+
 /* .complexity.beyond {} */
 /* .complexity.beyond .side {} */
 /* .complexity.nothing {
@@ -221,13 +231,13 @@ nests
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 632px;
+  height: 631px;
   overflow: hidden;
 
   opacity: 0.75;
 
   position: relative;
-  top: -67px;
+  top: -66px;
 }
 
 .layer {
