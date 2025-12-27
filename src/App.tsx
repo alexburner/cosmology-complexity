@@ -21,7 +21,7 @@ const MACRO = [
 ]
 
 const MICRO = [
-  "quantum realm",
+  "quantum foam",
   "particles",
   "atoms",
   "molecules",
@@ -33,7 +33,7 @@ const MICRO = [
 ]
 
 const calcHue = (index: number, length: number) =>
-  (index / (length + 1)) * 0.75 - 0.06
+  (index / (length + 1)) * 0.7 - 0.05
 
 export const App: FC = () => {
   return (
@@ -142,6 +142,14 @@ const cL = "82%"
 const cA = "60%"
 const COMPLEXITIES = [
   {
+    name: "nothing",
+    science: "",
+    detail: "",
+    dimension: "-1d",
+    shape: "",
+    color: `hsla(260deg, ${cS}, ${cL}, ${cA})`,
+  },
+  {
     name: "existence",
     science: "philosophy",
     detail: "medium, fabric, potential",
@@ -186,15 +194,19 @@ const COMPLEXITIES = [
 const Complexities: FC = () => {
   return (
     <div className="complexities">
-      <div className="complexity beyond">
+      <div className="complexity">
+        <div className="side left"></div>
+        <div className="side right"></div>
+      </div>
+      {/* <div className="complexity beyond">
         <div className="side left">
           <div className="name">beyond</div>
         </div>
         <div className="side right">
-          {/* <div className="science">spirituality</div> */}
+          <div className="science">spirituality</div>
         </div>
-      </div>
-      {COMPLEXITIES.map((c, i, l) => (
+      </div> */}
+      {COMPLEXITIES.map((c) => (
         <div
           key={c.name}
           className={`complexity ${c.name}`}
@@ -204,23 +216,24 @@ const Complexities: FC = () => {
           }}
         >
           <div className="side left">
-            <div className="name">{`${l.length - i - 1}d — ${c.name}`}</div>
+            <div className="dimension">{c.dimension}</div>
           </div>
           <div className="side right">
             {/* <div className="dimension">{c.dimension}</div>
             <div className="shape">{c.shape}</div> */}
+            <div className="name">{c.name}</div>
             <div className="science">{c.science}</div>
           </div>
         </div>
       ))}
-      <div className="complexity nothing">
+      {/* <div className="complexity nothing">
         <div className="side left">
           <div className="name">nothing</div>
         </div>
         <div className="side right">
-          {/* <div className="science">spirituality</div> */}
+          <div className="science">spirituality</div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
