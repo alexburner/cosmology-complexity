@@ -10,7 +10,7 @@ body {
 .container {
   position: fixed;
   inset: 0;
-  padding: 14vh 0;
+  padding: 16vh 0;
   overflow: scroll;
   background: #f4f4f4;
 }
@@ -80,8 +80,9 @@ big bloom
 
 .big-bloom .labels {
   position: relative;
+  top: 8px;
   font-size: 14px;
-  margin: -4px -38px 0;
+  margin: -4px -36px 0;
   width: 1000px;
   height: 1rem;
   /* border: 1px solid #333; */
@@ -125,7 +126,7 @@ complexities
   transform: translateX(-50%);
   z-index: -10;
 
-  width: 875px;
+  width: 854px;
   /* width: 2000px; */
   /* height: 546px; */
   /* border-top: 1px dotted #777; */

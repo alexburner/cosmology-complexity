@@ -137,6 +137,7 @@ const LayerNest: FC<{
   )
 }
 
+const cH = (i: number) => `${4.57 + 54.13 * i}deg`
 const cS = "90%"
 const cL = "82%"
 const cA = "60%"
@@ -147,7 +148,7 @@ const COMPLEXITIES = [
     detail: "",
     dimension: "-1d",
     shape: "",
-    color: `hsla(251.09deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(5)}, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "existence",
@@ -155,7 +156,7 @@ const COMPLEXITIES = [
     detail: "medium, fabric, potential",
     dimension: "0d",
     shape: "paths",
-    color: `hsla(311.09deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(6)}, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "energy",
@@ -163,7 +164,7 @@ const COMPLEXITIES = [
     detail: "electric, magnetic, nuclear",
     dimension: "1d",
     shape: "waves",
-    color: `hsla(4.57deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(0)}, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "matter",
@@ -171,7 +172,7 @@ const COMPLEXITIES = [
     detail: "atoms, molecules (elements, chemicals)",
     dimension: "2d",
     shape: "spirals",
-    color: `hsla(58.7deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(1)}, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "life",
@@ -179,7 +180,7 @@ const COMPLEXITIES = [
     detail: "proteins, nucleic acids, cells",
     dimension: "3d",
     shape: "tangles",
-    color: `hsla(112.83deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(2)}, ${cS}, ${cL}, ${cA})`,
   },
   {
     name: "mind",
@@ -187,7 +188,7 @@ const COMPLEXITIES = [
     detail: "attention, recollection, prediction",
     dimension: "4d",
     shape: "hidden\nvariables",
-    color: `hsla(166.15deg, ${cS}, ${cL}, ${cA})`,
+    color: `hsla(${cH(3)}, ${cS}, ${cL}, ${cA})`,
   },
   // {
   //   name: "beyond",
