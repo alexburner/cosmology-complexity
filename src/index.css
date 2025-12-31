@@ -7,16 +7,20 @@ body {
   letter-spacing: 0.03em;
 }
 
-.container {
+/* .container {
   position: fixed;
   inset: 0;
   padding: 16vh 0;
   overflow: scroll;
   background: #f4f4f4;
-}
+} */
 
 .universe {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 12px;
 }
 
 /*
@@ -27,7 +31,7 @@ you
 
 .you {
   position: absolute;
-  top: 144px;
+  bottom: 536px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -62,12 +66,9 @@ big bloom
   border: 1px solid #333;
 
   position: absolute;
-  /* bottom: calc(calc(var(--size) * -1) - 44px); */
-  /* bottom: calc(calc(var(--size) * -1) - 9px); */
-  /* bottom: calc(calc(var(--size) * -1) - 1px); */
-  bottom: -11px;
+  bottom: calc(var(--size) * 1.6);
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: -1;
   /* z-index: 1; */
 
@@ -123,12 +124,15 @@ complexities
 
 .complexities {
   position: absolute;
-  top: -41px;
+  /* top: -41px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -10;
 
-  width: 854px;
+  /* width: 854px; */
   /* width: 2000px; */
   /* height: 546px; */
   /* border-top: 1px dotted #777; */
@@ -239,8 +243,10 @@ nests
 
   opacity: 0.75;
 
-  position: relative;
-  top: -66px;
+  position: absolute;
+  bottom: 158px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .layer {
