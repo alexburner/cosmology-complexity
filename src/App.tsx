@@ -1,4 +1,5 @@
 import { FC } from "react"
+import { Simplex } from "./Simplex"
 
 /**
  * micro small —form-into-> large
@@ -39,6 +40,7 @@ export const App: FC = () => {
   return (
     <div className="container">
       <div className="universe">
+        {/* <div className="title">you are here | now</div> */}
         <div className="nests">
           <LayerNest layers={MACRO} align="left" />
           <LayerNest layers={MICRO} align="right" />
@@ -199,53 +201,32 @@ const COMPLEXITIES = [
   //   detail: "",
   //   dimension: "5d+",
   //   shape: "",
-  //   color: `hsla(210.15deg, ${cS}, ${cL}, ${cA})`,
+  //   color: `hsla(${cH(4)}, ${cS}, ${cL}, ${cA})`,
   // },
 ].reverse()
 
 const Complexities: FC = () => {
   return (
     <div className="complexities">
-      <div className="complexity">
-        <div className="side left"></div>
-        <div className="side right"></div>
-      </div>
-      {/* <div className="complexity beyond">
-        <div className="side left">
-          <div className="name">beyond</div>
-        </div>
-        <div className="side right">
-          <div className="science">spirituality</div>
-        </div>
-      </div> */}
-      {COMPLEXITIES.map((c) => (
+      {COMPLEXITIES.map((c, i, l) => (
         <div
           key={c.name}
           className={`complexity ${c.name}`}
-          style={{
-            background: c.color,
-            // boxShadow: `1px 1px 12px 19px ${c.color}`,
-          }}
+          style={{ background: c.color }}
         >
           <div className="side left">
+            <div className="simplex">
+              <Simplex n={l.length - 1 - i} />
+            </div>
             <div className="dimension">{c.dimension}</div>
           </div>
           <div className="side right">
-            {/* <div className="dimension">{c.dimension}</div>
-            <div className="shape">{c.shape}</div> */}
+            {/* <div className="shape">{c.shape}</div> */}
             <div className="name">{c.name}</div>
             <div className="science">{c.science}</div>
           </div>
         </div>
       ))}
-      {/* <div className="complexity nothing">
-        <div className="side left">
-          <div className="name">nothing</div>
-        </div>
-        <div className="side right">
-          <div className="science">spirituality</div>
-        </div>
-      </div> */}
     </div>
   )
 }
