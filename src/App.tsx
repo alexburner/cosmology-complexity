@@ -143,7 +143,7 @@ const cL = "82%"
 const cA = "60%"
 const COMPLEXITIES = [
   {
-    name: "nothing",
+    name: "emptiness",
     science: "",
     detail: "",
     dimension: "-1d",
