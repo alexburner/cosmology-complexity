@@ -80,22 +80,24 @@ big bloom
 
 .big-bloom .labels {
   position: relative;
-  top: 8px;
+  top: calc(var(--size) * 1.04);
+  left: 1px;
   font-size: 14px;
-  margin: -4px -36px 0;
-  width: 1000px;
+  /* margin: -4px -36px 0; */
+  /* width: 1000px; */
   height: 1rem;
   /* border: 1px solid #333; */
   opacity: 0.8;
+  text-align: center;
 }
-.big-bloom .labels .left {
+/* .big-bloom .labels .left {
   position: absolute;
   right: 100%;
 }
 .big-bloom .labels .right {
   position: absolute;
   left: 100%;
-}
+} */
 
 .raybox {
   position: absolute;

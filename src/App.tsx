@@ -61,18 +61,21 @@ const You: FC = () => (
 const BigBloom: FC = () => (
   <div className="big-bloom">
     <div className="labels">
-      <div className="left">big</div>
-      <div className="right">bloom</div>
+      big bloom
+      {/* <div className="left">big</div>
+      <div className="right">bloom</div> */}
     </div>
-    {new Array(48).fill(null).map((_, i, l) => (
-      <div
-        key={i}
-        className="raybox"
-        style={{ rotate: `${360 * (i / l.length)}deg` }}
-      >
-        <div className="ray" />
-      </div>
-    ))}
+    <div>
+      {new Array(48).fill(null).map((_, i, l) => (
+        <div
+          key={i}
+          className="raybox"
+          style={{ rotate: `${360 * (i / l.length)}deg` }}
+        >
+          <div className="ray" />
+        </div>
+      ))}
+    </div>
   </div>
 )
 
