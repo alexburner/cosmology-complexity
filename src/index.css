@@ -25,19 +25,23 @@ body {
 
 .title {
   position: absolute;
-  bottom: 840px;
+  bottom: 817px;
+  /* bottom: 816px; */
+  /* bottom: 808px; */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
   opacity: 0.8;
+  z-index: 100;
 }
 
 .title .main {
-  font-size: 19px;
+  font-size: 21px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
 }
 
 .title .sub {
@@ -53,7 +57,7 @@ you
 
 .you {
   position: absolute;
-  bottom: 536px;
+  bottom: 532px;
   left: 1px;
   right: 0;
   z-index: 100;
@@ -62,6 +66,7 @@ you
   align-items: center;
   font-weight: bold;
   font-size: 18px;
+  transform: scale(1.2);
 }
 
 .you .head {
@@ -212,12 +217,15 @@ complexities
 }
 .complexity .dimension {
   font-size: 13px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* font-family: Georgia, "Times New Roman", Times, serif; */
   opacity: 0.8;
 
   text-align: right;
   width: 25px;
+}
+.complexity .dimension.infinity {
+  font-size: 40px;
 }
 .complexity .shape {
   font-size: 17px;

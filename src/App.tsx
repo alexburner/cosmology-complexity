@@ -41,7 +41,7 @@ export const App: FC = () => {
     <div className="container">
       <div className="universe">
         <div className="title">
-          <div className="main">you are here / now</div>
+          {/* <div className="main">you are here / now</div> */}
           {/* <div className="sub">human complexity emergence</div> */}
         </div>
         <div className="nests">
@@ -145,83 +145,133 @@ const LayerNest: FC<{
   )
 }
 
+// https://www.youtube.com/watch?v=0nOtLj8UYCw
+// experience, existence, qualia
+// comprehension, meaning, consciousness
+// free will
+
 const cH = (i: number) => `${4.57 + 54.13 * i}deg`
 const cS = "90%"
 const cL = "82%"
 const cA = "60%"
 const COMPLEXITIES = [
   {
+    n: 0,
     name: "emptiness",
-    science: "",
+    science: "spirituality",
     detail: "",
     dimension: "-1d",
+    // A point is considered 0-dimensional,
+    // a line segment is 1-dimensional,
+    // and a square is 2-dimensional.
+    // Following this pattern,
+    // the entity below a 0D point
+    // in the dimensional hierarchy
+    // is defined as the null polytope,
+    // which corresponds to the empty set.
     shape: "",
     color: `hsla(${cH(5)}, ${cS}, ${cL}, ${cA})`,
   },
   {
+    n: 1,
     name: "existence",
     science: "philosophy",
     detail: "medium, fabric, potential",
-    dimension: "0d",
     shape: "paths",
     color: `hsla(${cH(6)}, ${cS}, ${cL}, ${cA})`,
   },
   {
+    n: 2,
     name: "energy",
     science: "physics",
     detail: "electric, magnetic, nuclear",
-    dimension: "1d",
     shape: "waves",
     color: `hsla(${cH(0)}, ${cS}, ${cL}, ${cA})`,
   },
   {
+    n: 3,
     name: "matter",
     science: "chemistry",
     detail: "atoms, molecules (elements, chemicals)",
-    dimension: "2d",
     shape: "spirals",
     color: `hsla(${cH(1)}, ${cS}, ${cL}, ${cA})`,
   },
   {
+    n: 4,
     name: "life",
     science: "biology",
     detail: "proteins, nucleic acids, cells",
-    dimension: "3d",
     shape: "tangles",
     color: `hsla(${cH(2)}, ${cS}, ${cL}, ${cA})`,
   },
   {
+    n: 5,
     name: "mind",
     science: "psychology",
     detail: "attention, recollection, prediction",
-    dimension: "4d",
+    // present, past, future
+    // all spatial dimensions move through time
+    // but mind reaches into time, instead of just moving through
+    // witnessing present, remembering past, predicting future
+    // 4th dimensional shape through time
+    // |recording, playing, projecting|
+    // ^ too ingrown? digital gear metaphors
+    // being through time
+    // network growth into past & future
+    // decision/circumstance multiverse trees, possibilities
+    // tree roots and branches
+    // drawing strength, bearing fruit
+    // 4d human mind trees, ( past > present < future )
+    // present, past, future witness
     shape: "hidden\nvariables",
     color: `hsla(${cH(3)}, ${cS}, ${cL}, ${cA})`,
   },
-  // {
-  //   name: "beyond",
-  //   science: "",
-  //   detail: "",
-  //   dimension: "5d+",
-  //   shape: "",
-  //   color: `hsla(${cH(4)}, ${cS}, ${cL}, ${cA})`,
-  // },
+  {
+    n: 6,
+    // name: "beyond",
+    name: "?",
+  },
+  {
+    n: 7,
+    // name: "?",
+  },
+  {
+    n: 8,
+    // name: "?",
+  },
+  { n: 9 },
+  { n: 10 },
+  { n: 11 },
+  { n: 12 },
+  { n: 13 },
+  { n: 14 },
+  { n: 15 },
+  { n: 16 },
+  { n: 17 },
+  { n: 18 },
+  { n: 19 },
+  { n: 20 },
+  // { n: 11 },
+  // { n: 101 },
+  // { n: Infinity, name: "?" },
 ].reverse()
 
 const Complexities: FC = () => {
   return (
     <div className="complexities">
-      {COMPLEXITIES.map((c, i, l) => (
+      {COMPLEXITIES.map((c) => (
         <div
-          key={c.name}
+          key={c.n}
           className={`complexity ${c.name}`}
           style={{ background: c.color }}
         >
           <div className="side left">
             <div className="simplex">
-              <Simplex n={l.length - 1 - i} />
+              <Simplex n={Math.min(c.n, 100)} />
             </div>
-            <div className="dimension">{c.dimension}</div>
+            <div className={`dimension ${c.n === Infinity ? "infinity" : ""}`}>
+              {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+            </div>
           </div>
           <div className="side right">
             {/* <div className="shape">{c.shape}</div> */}
