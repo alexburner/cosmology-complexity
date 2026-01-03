@@ -20,15 +20,29 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: calc(108px * (1 / 2));
+  bottom: calc(108px * 1);
 }
 
 .title {
   position: absolute;
-  bottom: 830px;
+  bottom: 840px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  opacity: 0.8;
+}
+
+.title .main {
+  font-size: 19px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.title .sub {
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 /*

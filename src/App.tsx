@@ -40,7 +40,10 @@ export const App: FC = () => {
   return (
     <div className="container">
       <div className="universe">
-        {/* <div className="title">you are here | now</div> */}
+        <div className="title">
+          <div className="main">you are here / now</div>
+          {/* <div className="sub">human complexity emergence</div> */}
+        </div>
         <div className="nests">
           <LayerNest layers={MACRO} align="left" />
           <LayerNest layers={MICRO} align="right" />
