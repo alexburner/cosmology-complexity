@@ -84,7 +84,7 @@ big bloom
 */
 
 .big-bloom {
-  --size: 76px;
+  --size: 56px;
   width: var(--size);
   height: var(--size);
 
@@ -94,7 +94,7 @@ big bloom
 
   position: absolute;
   /* bottom: calc(var(--size) * 1.6); */
-  bottom: 118px;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
@@ -108,9 +108,11 @@ big bloom
 }
 
 .big-bloom .labels {
-  position: relative;
-  top: calc(var(--size) * 1.048);
-  left: 1px;
+  position: absolute;
+  top: calc(var(--size) * 1.55);
+  left: 50%;
+  width: 100px;
+  transform: translateX(-50%);
   font-size: 14px;
   /* margin: -4px -36px 0; */
   /* width: 1000px; */

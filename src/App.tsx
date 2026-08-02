@@ -22,7 +22,7 @@ const MACRO = [
 ]
 
 const MICRO = [
-  "quantum foam",
+  "quantum fields",
   "particles",
   "atoms",
   "molecules",
@@ -228,12 +228,14 @@ const COMPLEXITIES = [
   },
   {
     n: 6,
-    // name: "beyond",
-    name: "?",
+    // name: "?",
+    name: "beyond",
+    science: "spirituality",
   },
   {
     n: 7,
     // name: "?",
+    name: "...",
   },
   {
     n: 8,
@@ -259,27 +261,37 @@ const COMPLEXITIES = [
 const Complexities: FC = () => {
   return (
     <div className="complexities">
-      {COMPLEXITIES.map((c) => (
-        <div
-          key={c.n}
-          className={`complexity ${c.name}`}
-          style={{ background: c.color }}
-        >
-          <div className="side left">
-            <div className="simplex">
-              <Simplex n={Math.min(c.n, 100)} />
+      {COMPLEXITIES.map((c) => {
+        const alpha = c.n <= 5 ? 60 : 55 - c.n * c.n * 0.23
+        // const alpha = 60
+        const color = `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
+        return (
+          <div
+            key={c.n}
+            className={`complexity ${c.name}`}
+            style={{
+              background: color,
+              // opacity: c.n <= 5 ? 1 : 1 - c.n * c.n * 0.004,
+            }}
+          >
+            <div className="side left">
+              <div className="simplex">
+                <Simplex n={Math.min(c.n, 100)} />
+              </div>
+              <div
+                className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
+              >
+                {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+              </div>
             </div>
-            <div className={`dimension ${c.n === Infinity ? "infinity" : ""}`}>
-              {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+            <div className="side right">
+              {/* <div className="shape">{c.shape}</div> */}
+              <div className="name">{c.name || "..."}</div>
+              <div className="science">{c.science}</div>
             </div>
           </div>
-          <div className="side right">
-            {/* <div className="shape">{c.shape}</div> */}
-            <div className="name">{c.name}</div>
-            <div className="science">{c.science}</div>
-          </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
