@@ -1,5 +1,6 @@
 import { FC } from "react"
-import { Simplex } from "./Simplex"
+import { Simplex } from "./simplex/Simplex"
+import { SimplexSpread } from "./simplex/SimplexSpread"
 
 /**
  * micro small —form-into-> large
@@ -150,6 +151,28 @@ const LayerNest: FC<{
 // comprehension, meaning, consciousness
 // free will
 
+/*
+Why Bookending with Spirituality Makes Sense
+
+Using "Spirituality" as both the root (-1D) and the canopy (5D+) creates
+a cyclical framework, much like the ancient symbol of the Ouroboros
+(the snake eating its own tail).
+
+-1D / Emptiness / Spirituality: In many Eastern philosophies (like Buddhism
+and Advaita Vedanta), "Emptiness" (Sunyata) is not a void, but the ultimate
+ground of potential from which all existence springs. It is the formless
+before form.
+
+5D+ / Beyond / Spirituality: If 4D is the individual mind (Psychology),
+5D represents the transcendence of the ego. This aligns with mystical
+traditions that suggest the ultimate evolution of consciousness is realizing
+its connection back to the whole—bringing the list full circle back to the
+"Emptiness" of -1D.
+
+Bookending it this way changes the list from a strict scientific hierarchy
+into a map of the human subjective experience of the cosmos.
+ */
+
 const cH = (i: number) => `${4.57 + 54.13 * i}deg`
 const cS = "90%"
 const cL = "82%"
@@ -262,7 +285,7 @@ const Complexities: FC = () => {
   return (
     <div className="complexities">
       {COMPLEXITIES.map((c) => {
-        const alpha = c.n <= 5 ? 60 : 55 - c.n * c.n * 0.23
+        const alpha = c.n <= 5 ? 60 : 45 - c.n * c.n * 0.23
         // const alpha = 60
         const color = `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
         return (
@@ -282,6 +305,9 @@ const Complexities: FC = () => {
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
                 {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+              </div>
+              <div className="simplex spread">
+                <SimplexSpread n={Math.min(c.n, 100)} />
               </div>
             </div>
             <div className="side right">
