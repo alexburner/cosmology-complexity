@@ -285,7 +285,9 @@ const Complexities: FC = () => {
   return (
     <div className="complexities">
       {COMPLEXITIES.map((c) => {
-        const alpha = c.n <= 5 ? 60 : 45 - c.n * c.n * 0.23
+        const alpha = c.n <= 5 ? 60 : 0
+        // const alpha = c.n <= 5 ? 60 : c.n == 6 ? 45 : 0
+        // const alpha = c.n <= 5 ? 60 : 45 - c.n * c.n * 0.23
         // const alpha = 60
         const color = `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
         return (
