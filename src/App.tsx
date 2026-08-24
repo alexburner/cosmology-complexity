@@ -1,6 +1,5 @@
 import { FC } from "react"
 import { Simplex } from "./simplex/Simplex"
-import { SimplexSpread } from "./simplex/SimplexSpread"
 
 /**
  * micro small —form-into-> large
@@ -23,7 +22,7 @@ const MACRO = [
 ]
 
 const MICRO = [
-  "quantum fields",
+  "quantum foam",
   "particles",
   "atoms",
   "molecules",
@@ -281,6 +280,15 @@ const COMPLEXITIES = [
   // { n: Infinity, name: "?" },
 ].reverse()
 
+const DIMENSION_NAMES = [
+  "nothing",
+  "point",
+  "line",
+  "plane",
+  "volume",
+  "hypervolume",
+]
+
 const Complexities: FC = () => {
   return (
     <div className="complexities">
@@ -293,7 +301,7 @@ const Complexities: FC = () => {
         return (
           <div
             key={c.n}
-            className={`complexity ${c.name}`}
+            className={`complexity ${c.name} n${c.n}`}
             style={{
               background: color,
               // opacity: c.n <= 5 ? 1 : 1 - c.n * c.n * 0.004,
@@ -307,10 +315,14 @@ const Complexities: FC = () => {
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
                 {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+                &nbsp;
+                {DIMENSION_NAMES[c.n] ?? `hypervolume`}
+                {/* {DIMENSION_NAMES[c.n] ?? `hyper${c.n - 4}volume`} */}
+                {/* {DIMENSION_NAMES[c.n] ?? `${"hyper".repeat(c.n - 4)}volume`} */}
               </div>
-              <div className="simplex spread">
+              {/* <div className="simplex spread">
                 <SimplexSpread n={Math.min(c.n, 100)} />
-              </div>
+              </div> */}
             </div>
             <div className="side right">
               {/* <div className="shape">{c.shape}</div> */}

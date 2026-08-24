@@ -16,7 +16,7 @@ const GRAPH_COLOR = new paper.Color("#111")
 // GRAPH_COLOR.alpha = 0.88
 const CIRCLE_COLOR = new paper.Color(GRAPH_COLOR)
 CIRCLE_COLOR.alpha = 0.33
-// const FILL_COLOR = new paper.Color("white")
+const FILL_COLOR = new paper.Color("white")
 
 export const Simplex: FC<{ n: number }> = ({ n }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -56,9 +56,8 @@ const draw = (args: { n: number; canvas: HTMLCanvasElement }) => {
     points,
     strokeColor: TRANSPARENT,
     strokeWidth: 0,
-    // fillColor: FILL_COLOR,
-    // TODO fill spread too
-    fillColor: TRANSPARENT,
+    fillColor: FILL_COLOR,
+    // fillColor: TRANSPARENT, // TODO fill spread too
   })
   group.addChild(fill)
 

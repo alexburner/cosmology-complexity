@@ -5,6 +5,7 @@ body {
   font-family: sans-serif;
   font-weight: lighter;
   letter-spacing: 0.03em;
+  background: white;
 }
 
 /* .container {
@@ -194,7 +195,7 @@ complexities
 .complexity .side.left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.82rem;
   padding-left: 34px;
 
   text-align: left;
@@ -226,6 +227,12 @@ complexities
 
   text-align: right;
   /* width: 25px; */
+  white-space: nowrap;
+  /* text-transform: uppercase; */
+}
+.complexity.n0 .dimension {
+  position: relative;
+  left: -0.42rem;
 }
 .complexity .dimension.infinity {
   font-size: 40px;
