@@ -281,7 +281,7 @@ const COMPLEXITIES = [
 ].reverse()
 
 const DIMENSION_NAMES = [
-  "nothing",
+  "empty set",
   "point",
   "line",
   "plane",
@@ -293,11 +293,18 @@ const Complexities: FC = () => {
   return (
     <div className="complexities">
       {COMPLEXITIES.map((c) => {
-        const alpha = c.n <= 5 ? 60 : 0
+        // const alpha = c.n <= 5 ? 60 : 0
         // const alpha = c.n <= 5 ? 60 : c.n == 6 ? 45 : 0
         // const alpha = c.n <= 5 ? 60 : 45 - c.n * c.n * 0.23
-        // const alpha = 60
-        const color = `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
+        const alpha = 60
+        // const lightness = c.n <= 5 ? cL : "80%"
+        // const saturation = c.n <= 5 ? cS : 0
+        // const hue = c.n <= 5 ? cH(c.n - 2) : cH(6 - 2)
+        // const color = `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
+        const color =
+          c.n <= 5
+            ? `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
+            : `#00000005`
         return (
           <div
             key={c.n}
@@ -327,7 +334,7 @@ const Complexities: FC = () => {
             <div className="side right">
               {/* <div className="shape">{c.shape}</div> */}
               <div className="name">{c.name || "..."}</div>
-              <div className="science">{c.science}</div>
+              {c.n > 0 && c.n < 6 && <div className="science">{c.science}</div>}
             </div>
           </div>
         )

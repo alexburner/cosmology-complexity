@@ -210,7 +210,7 @@ complexities
 }
 
 .complexity .name {
-  font-size: 15px;
+  font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
   opacity: 0.8;
 }
@@ -232,7 +232,7 @@ complexities
 }
 .complexity.n0 .dimension {
   position: relative;
-  left: -0.42rem;
+  left: -0.5rem;
 }
 .complexity .dimension.infinity {
   font-size: 40px;
