@@ -14,11 +14,14 @@ const MACRO = [
   "galaxies",
   "stars",
   "planets",
-  "physiotopes",
-  "autotrophs",
-  "heterotrophs",
-  "(collectives)",
-  "((cultures))",
+  // "physiotopes",
+  // "autotrophs",
+  // "heterotrophs",
+  "lands",
+  "plants",
+  "animals",
+  "c (collectives)",
+  "c ((cultures))",
 ]
 
 const MICRO = [
@@ -29,8 +32,8 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "(awarenesses)",
-  "((abstractions))",
+  "c (awarenesses)",
+  "c ((abstractions))",
 ]
 
 const calcHue = (index: number, length: number) =>
@@ -250,14 +253,14 @@ const COMPLEXITIES = [
   },
   {
     n: 6,
-    // name: "?",
-    name: "beyond",
+    name: "?",
+    // name: "beyond",
     science: "spirituality",
   },
   {
     n: 7,
     // name: "?",
-    name: "...",
+    // name: "...",
   },
   {
     n: 8,
@@ -279,6 +282,11 @@ const COMPLEXITIES = [
   // { n: 101 },
   // { n: Infinity, name: "?" },
 ].reverse()
+
+const NAME_FALLBACK = "..."
+// const NAME_FALLBACK = "__"
+// const NAME_FALLBACK = ""
+// const NAME_FALLBACK = "?"
 
 const DIMENSION_NAMES = [
   "empty set",
@@ -304,7 +312,7 @@ const Complexities: FC = () => {
         const color =
           c.n <= 5
             ? `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
-            : `#00000005`
+            : `#00000009`
         return (
           <div
             key={c.n}
@@ -333,7 +341,7 @@ const Complexities: FC = () => {
             </div>
             <div className="side right">
               {/* <div className="shape">{c.shape}</div> */}
-              <div className="name">{c.name || "..."}</div>
+              <div className="name">{c.name || NAME_FALLBACK}</div>
               {c.n > 0 && c.n < 6 && <div className="science">{c.science}</div>}
             </div>
           </div>
