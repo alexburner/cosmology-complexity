@@ -20,8 +20,8 @@ const MACRO = [
   "lands",
   "plants",
   "animals",
-  "( collectives )",
-  "(( cultures ))",
+  "(collectives)",
+  "((cultures))",
 ]
 
 const MICRO = [
@@ -32,8 +32,8 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "( awarenesses )",
-  "(( abstractions ))",
+  "(awarenesses)",
+  "((abstractions))",
 ]
 
 const calcHue = (index: number, length: number) =>
@@ -48,8 +48,8 @@ export const App: FC = () => {
           {/* <div className="sub">human complexity emergence</div> */}
         </div>
         <div className="nests">
-          <LayerNest layers={MACRO} align="left" />
-          <LayerNest layers={MICRO} align="right" />
+          <LayerNest layers={MICRO} align="left" />
+          <LayerNest layers={MACRO} align="right" />
         </div>
         <You />
         <BigBloom />

@@ -1,3 +1,12 @@
+@import "tailwindcss";
+
+
+@layer base {
+  *, ::before, ::after {
+    box-sizing: content-box;
+  }
+}
+
 html,
 body {
   margin: 0;
