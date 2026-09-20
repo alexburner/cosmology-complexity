@@ -289,7 +289,8 @@ const COMPLEXITIES = [
 const NAME_FALLBACK = "?"
 
 const DIMENSION_NAMES = [
-  "empty set",
+  // "empty set",
+  "no thing",
   "point",
   "line",
   "plane",
@@ -332,10 +333,11 @@ const Complexities: FC = () => {
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
                 {c.n === Infinity ? "∞" : `${c.n - 1}D`}
-                &nbsp;
+              </div>
+              <div
+                className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
+              >
                 {DIMENSION_NAMES[c.n] ?? `hypervolume`}
-                {/* {DIMENSION_NAMES[c.n] ?? `hyper${c.n - 4}volume`} */}
-                {/* {DIMENSION_NAMES[c.n] ?? `${"hyper".repeat(c.n - 4)}volume`} */}
               </div>
               {/* <div className="simplex spread">
                 <SimplexSpread n={Math.min(c.n, 100)} />
