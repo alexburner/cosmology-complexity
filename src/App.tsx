@@ -20,8 +20,8 @@ const MACRO = [
   "lands",
   "plants",
   "animals",
-  "c (collectives)",
-  "c ((cultures))",
+  "( collectives )",
+  "(( cultures ))",
 ]
 
 const MICRO = [
@@ -32,8 +32,8 @@ const MICRO = [
   "biomolecules",
   "cells",
   "organs",
-  "c (awarenesses)",
-  "c ((abstractions))",
+  "( awarenesses )",
+  "(( abstractions ))",
 ]
 
 const calcHue = (index: number, length: number) =>
@@ -142,7 +142,7 @@ const LayerNest: FC<{
           }px)`,
         }}
       >
-        {layers[index]}
+        <div className="inner">{layers[index]}</div>
       </div>
     </div>
   )
@@ -253,7 +253,7 @@ const COMPLEXITIES = [
   },
   {
     n: 6,
-    name: "?",
+    // name: "?",
     // name: "beyond",
     science: "spirituality",
   },
@@ -283,10 +283,10 @@ const COMPLEXITIES = [
   // { n: Infinity, name: "?" },
 ].reverse()
 
-const NAME_FALLBACK = "..."
+// const NAME_FALLBACK = "..."
 // const NAME_FALLBACK = "__"
 // const NAME_FALLBACK = ""
-// const NAME_FALLBACK = "?"
+const NAME_FALLBACK = "?"
 
 const DIMENSION_NAMES = [
   "empty set",
@@ -313,6 +313,8 @@ const Complexities: FC = () => {
           c.n <= 5
             ? `hsla(${cH(c.n - 2)}, ${cS}, ${cL}, ${alpha}%)`
             : `#00000009`
+        const noContent = c.n > 5
+        // const noContent = false
         return (
           <div
             key={c.n}
@@ -322,7 +324,7 @@ const Complexities: FC = () => {
               // opacity: c.n <= 5 ? 1 : 1 - c.n * c.n * 0.004,
             }}
           >
-            <div className="side left">
+            <div className="side left" style={{ opacity: noContent ? 0 : 1 }}>
               <div className="simplex">
                 <Simplex n={Math.min(c.n, 100)} />
               </div>
@@ -339,10 +341,13 @@ const Complexities: FC = () => {
                 <SimplexSpread n={Math.min(c.n, 100)} />
               </div> */}
             </div>
-            <div className="side right">
+            <div className="side right" style={{ opacity: noContent ? 0 : 1 }}>
               {/* <div className="shape">{c.shape}</div> */}
+              {/* <div className="name">{c.name || NAME_FALLBACK}</div> */}
+              {c.n >= 0 && c.n < 6 && (
+                <div className="science">{c.science}</div>
+              )}
               <div className="name">{c.name || NAME_FALLBACK}</div>
-              {c.n > 0 && c.n < 6 && <div className="science">{c.science}</div>}
             </div>
           </div>
         )

@@ -35,6 +35,7 @@ export const Simplex: FC<{ n: number }> = ({ n }) => {
         width: `${CANVAS_W}px`,
         height: `${CANVAS_H}px`,
         // outline: "1px solid #111",
+        transform: "rotate(180deg)",
       }}
     />
   )
