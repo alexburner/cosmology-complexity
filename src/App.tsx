@@ -329,15 +329,22 @@ const Complexities: FC = () => {
               <div className="simplex">
                 <Simplex n={Math.min(c.n, 100)} />
               </div>
-              <div
+              {/* <div
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
                 {c.n === Infinity ? "∞" : `${c.n - 1}D`}
-              </div>
+              </div> */}
               <div
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
-                {DIMENSION_NAMES[c.n] ?? `hypervolume`}
+                <div className="flex flex-col">
+                  <div className="text-[14px] -mb-[0.125em]">
+                    {c.n === Infinity ? "∞" : `${c.n - 1}D`}
+                  </div>
+                  <div className="d-name">
+                    {DIMENSION_NAMES[c.n] ?? `hypervolume`}
+                  </div>
+                </div>
               </div>
               {/* <div className="simplex spread">
                 <SimplexSpread n={Math.min(c.n, 100)} />
