@@ -51,7 +51,7 @@ export const App: FC = () => {
           <LayerNest layers={MICRO} align="left" />
           <LayerNest layers={MACRO} align="right" />
         </div>
-        <You />
+        {/* <You /> */}
         <BigBloom />
         <Complexities />
       </div>
@@ -59,12 +59,12 @@ export const App: FC = () => {
   )
 }
 
-const You: FC = () => (
-  <div className="you">
-    <div className="head">●</div>
-    <div className="body">大</div>
-  </div>
-)
+// const You: FC = () => (
+//   <div className="you">
+//     <div className="head">●</div>
+//     <div className="body">大</div>
+//   </div>
+// )
 
 const BigBloom: FC = () => (
   <div className="big-bloom">
@@ -253,8 +253,9 @@ const COMPLEXITIES = [
   },
   {
     n: 6,
+    // n: Infinity,
     // name: "?",
-    // name: "beyond",
+    name: "beyond",
     science: "spirituality",
   },
   {
@@ -295,7 +296,7 @@ const DIMENSION_NAMES = [
   "line",
   "plane",
   "volume",
-  "hypervolume",
+  // "hypervolume",
 ]
 
 const Complexities: FC = () => {
@@ -337,12 +338,19 @@ const Complexities: FC = () => {
               <div
                 className={`dimension ${c.n === Infinity ? "infinity" : ""}`}
               >
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center justify-center w-[14ch] relative -right-[2em]">
                   <div className="text-[14px] -mb-[0.125em]">
                     {c.n === Infinity ? "∞" : `${c.n - 1}D`}
                   </div>
                   <div className="d-name">
-                    {DIMENSION_NAMES[c.n] ?? `hypervolume`}
+                    {DIMENSION_NAMES[c.n] ? (
+                      <>{DIMENSION_NAMES[c.n]}</>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center">
+                        <span>hyper</span>
+                        <span className="-mt-[0.25em]">volume</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -353,7 +361,7 @@ const Complexities: FC = () => {
             <div className="side right" style={{ opacity: noContent ? 0 : 1 }}>
               {/* <div className="shape">{c.shape}</div> */}
               {/* <div className="name">{c.name || NAME_FALLBACK}</div> */}
-              {c.n >= 0 && c.n < 6 && (
+              {c.n >= 0 && c.n < 7 && (
                 <div className="science">{c.science}</div>
               )}
               <div className="name">{c.name || NAME_FALLBACK}</div>

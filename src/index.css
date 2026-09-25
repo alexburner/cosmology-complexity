@@ -249,10 +249,10 @@ complexities
   /* font-size: 11px; */
   /* text-transform: uppercase; */
 /* } */
-.complexity.n0 .dimension {
+/* .complexity.n0 .dimension {
   position: relative;
   left: -0.5rem;
-}
+} */
 .complexity .dimension.infinity {
   font-size: 40px;
 }
